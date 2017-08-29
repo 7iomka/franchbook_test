@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru-ru" dir="ltr" class="no-js">
+  <head>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicons/apple-touch-icon.png' | path }}">
+    <link rel="icon" type="image/png" href="{{ '/assets/favicons/favicon-32x32.png' | path }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ '/assets/favicons/favicon-16x16.png' | path }}" sizes="16x16">
+    <link rel="manifest" href="{{ '/assets/favicons/manifest.json' | path }}">
+    <link rel="mask-icon" href="{{ '/assets/favicons/safari-pinned-tab.svg' | path }}" color="#5bbad5">
+    <meta name="theme-color" content="#393345">
+    <link rel="stylesheet" href="/assets/styles/header.css">
+<!--    <link inline href="/assets/styles/header.css">-->
+    <meta charset="utf-8"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>{{ _target.context.title }}</title>
+
+
+    <link rel="preload" href="{{ '/assets/styles/app.css' | path }}" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ '/assets/styles/app.css' | path }}"></noscript>
+    <script>
+      /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+      !function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
+      /*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+      !function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})
+      }}}(this);
+    </script>
+    <script></script><!-- here to ensure a non-blocking load still occurs in IE and Edge, even if scripts follow loadCSS in head -->
+
+  </head>
+
+  <body>
+    <script src="{{ '/assets/scripts/vendors/aos/aos.js' | path }}" charset="utf-8" onload="AOS_init()" async></script>
+    <script type="text/javascript">
+      function AOS_init(){
+        AOS.init({
+          offset: 200,
+          duration: 600,
+          easing: 'ease',
+          delay: 100,
+          disable: 'mobile',
+          once: true
+        });
+
+      }
+    </script>
+    {{ yield }}
+    <script type="text/javascript">
+      var localProxy = '';
+    </script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous" defer></script>
+    <script src="{{ '/assets/scripts/modernizr-custom.js' | path }}" charset="utf-8" defer></script>
+
+
+    <script src="{{ '/assets/scripts/app.js' | path }}" charset="utf-8" defer></script>
+
+  </body>
+</html>

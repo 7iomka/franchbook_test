@@ -1,0 +1,24 @@
+{
+  "palettes": {
+    "primary": {
+      "light": "#ffd233",
+      "base": "#f6c300",
+      "dark": "#ffb805"
+    },
+    "secondary": {
+      "light": "#30323b",
+      "base": "#30323b",
+      "dark": "#2f2b39",
+      "outlined": "#312d3b"
+    },
+    "neutral": {
+      "lightest": "#fff",
+      "lighter": "#b9b9c0",
+      "light": "#8c8c9c",
+      "base": "#778",
+      "dark": "#636373",
+      "darker": "#3f3f46",
+      "darkest": "#1f1f20"
+    }
+  }
+}

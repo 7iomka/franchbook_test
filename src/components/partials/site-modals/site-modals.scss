@@ -1,0 +1,81 @@
+// ----------------------------------------------------------------------------
+// contacts-map
+// ----------------------------------------------------------------------------
+.contacts-map {
+  .modal__body {
+    font-size: inherit;
+    background-color: #064381;
+    background-image: linear-gradient(45deg,#064381 0%, #0362c1 50%, #2266aa 100%);
+  }
+  &__container {
+    position: relative;
+    height: 50em;
+    min-height: calc(100vh - 2*1.16667em);
+  }
+  &__wrapper, #contacts-map {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Action-modal
+// ----------------------------------------------------------------------------
+
+.action-modal {
+  &__header {
+    text-align: center;
+    padding-bottom: 0.6em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+  }
+  &__figure-icon {
+    margin-bottom: 1.4em;
+  }
+  &__title {
+    padding-bottom: 0;
+    color: #283999;
+    &:after {
+      content: none;
+    }
+  }
+  &__annonce {
+    font-size: 2em;
+    line-height: 1.25;
+    text-align: center;
+    margin-bottom: em-rel(3.1, 2);
+  }
+
+  &__body {
+    font-size: inherit;
+    padding: 2.4em 4em 4em;
+  }
+  &__content {
+    position: relative;
+  }
+
+  &__preloader {
+    z-index: 99;
+  }
+}
+
+
+
+// success data
+.final-data {
+  display: block;
+  text-align: center;
+
+  &__success-text {
+    $base: 2;
+    font-size: $base*1em;
+    margin: em-rel(3, $base) auto;
+
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

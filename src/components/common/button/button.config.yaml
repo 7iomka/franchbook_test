@@ -1,0 +1,55 @@
+variants:
+- name: default
+  context:
+    label: Button
+- name: default
+  context:
+    label: Button-outlined
+    mods: [outlined]
+- name: disabled
+  context:
+    label: Disabled button
+    disabled: true
+- name: with-image
+  context:
+    image: /assets/images/icons/addToCart.png
+    label: Button with image
+    mods: [with-image]
+- name: more
+  context:
+    label: Show me another 24 ways…
+    href: ?page=2
+    mods: [more]
+- name: primary
+  context:
+    label: Button with background primary
+    mods: [primary]
+- name: secondary
+  context:
+    label: Button with background secondary
+    mods: [secondary]
+- name: dark
+  context:
+    label: Button dark
+    mods: [dark]
+- name: dark-custom
+  context:
+    label: Button dark with separately custom class
+    mods: [dark]
+    customClassList: myCustomClass1 topLeveleComponent__btn
+- name: secondary-big
+  context:
+    label: Button with background secondary and BIG
+    mods: [secondary, big]
+- name: fixed-width_medium
+  context:
+    label: fixed-width_medium
+    mods: [fixed-width_medium]
+- name: multiple-values
+  context:
+    label: multiple-values
+    mods: [primary,fixed-width_medium]
+    values:
+      - value: 'Развернуть карту'
+        visible: true
+      - value: 'Свернуть карту'

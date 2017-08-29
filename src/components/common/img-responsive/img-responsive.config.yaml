@@ -1,0 +1,21 @@
+default: default
+variants:
+  - name: default
+    context:
+      src: /assets/images/test.jpg
+  - name: empty
+    context:
+      src: 'data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='
+      mods: [empty]
+      external: true
+  - name: with-link
+    context:
+      mods: [with-link]
+      src: /assets/images/test.jpg
+      link: /
+  - name: with-overlay
+    context:
+      mods: [with-link, with-overlay]
+      src: /assets/images/test.jpg
+      link: '#'
+      overlay: true

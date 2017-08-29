@@ -1,0 +1,27 @@
+{# {% from "form-macros.html" import form_input %}
+
+{{ form_input(config) }} #}
+
+<div class="form-group {{ 'form-group--with-addon' if addon}}">
+  {% if label %}
+    <label class="form-label" for="{{ name }}_id">{{ title }}</label>
+  {% endif %}
+  <input class="form-control" id="{{ name }}_id" name="{{ name }}" type="{{ type }}" value="{{ value | escape }}" {{ "disabled='disabled'" if disabled }} />
+  {% if addon %}
+    {% if addon.type == 'component' %}
+      {% set blockName = addon.component %}
+      {% block blockName %}
+      {% endblock %}
+    {% endif %}
+    {% if addon.type == 'text' %}
+        <span class="form-group-addon form-group-addon--text">{{ addon.content }}</span>
+    {% endif %}
+  {% endif %}
+</div>
+
+{# {% if addon.type == "component" %}
+  {% set blockName = addon.component %}
+  {% block blockName %}
+    {% render "@" + addon.component, addon.config %}
+  {% endblock %}
+{% endif %} #}

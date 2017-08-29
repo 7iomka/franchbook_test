@@ -1,0 +1,17 @@
+@mixin blockTitle($prefix) {
+  .#{$prefix}-title-area {
+
+  }
+  .#{$prefix}-title {
+    color: black;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 4em;
+    line-height: 1;
+
+  }
+}
+
+// use mixin for section
+@include blockTitle('section');

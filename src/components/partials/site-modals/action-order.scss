@@ -1,0 +1,47 @@
+.success-container {
+  margin: auto -1.5em;
+}
+
+.modal__button-close {
+  $base: 1.9;
+  padding: em-rel(2.4, 1.9) em-rel(2.8, 1.9);
+  border-radius: em-rel(3.1, 1.9);
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1;
+  width: 100%;
+  max-width: 320px;
+}
+
+.order-data {
+  display: block;
+  text-align: center;
+  &__id {
+    $base: 3;
+    background-color: #ffd200;
+    width: 100%;
+    font-size: $base*1em;
+    line-height: 1;
+    font-weight: bold;
+    padding: em-rel(2.8, $base) em-rel(0.6, $base);
+    border: 6px solid #ffc600;
+    border: em-rel(0.6,$base) solid #ffc600;
+  }
+
+  &__success-text {
+    $base: 2;
+    font-size: $base*1em;
+    margin: em-rel(3, $base) auto;
+    max-width: 30em; 
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// common
+.addToBookmark {
+    font-weight: bold;
+    text-decoration: underline;
+}

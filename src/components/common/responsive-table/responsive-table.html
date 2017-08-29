@@ -1,0 +1,45 @@
+<!-- Price responsive table -->
+<!-- Responsive table starts here -->
+<!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
+
+  <div class="responsive-table{% for mod in mods %} responsive-table--{{ mod }} {% endfor %}">
+    <!-- Table starts here -->
+    <table class="table" style="margin: auto;">
+      <thead>
+        <tr>
+          {% for th in thead %}
+            <th>{{ th }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for tr in rows %}
+          <tr class="{{ tr.class if tr.class }}">
+            {% for td in tr.cells %}
+              <td class="{{ 'strong' if strongCellsIds and loop.index in strongCellsIds }} {{ 'transparent' if transparentCellsIds and loop.index in transparentCellsIds }} {% if td.center %} text-center {% endif %} {{ td.class if td.class}}">
+                {% if td.component and not td.custom %}
+                  <div class="table-cell-wrapper {% if td.center %} d-inline-block align-middle {% endif %}">
+                    {% render '@' + td.component, td.config, true %}
+                  </div>
+                {% elseif td.custom %}
+                  {{ td.content }}
+                {% else %}
+                  {{ td }}
+                {% endif %}
+              </td>
+            {% endfor %}
+          </tr>
+          {% if not loop.last %}
+          <tr class="empty">
+            {% for td in tr.cells %}
+              <td class="empty {{ 'transparent' if loop.index in transparentCellsIds }}"></td>
+            {% endfor %}
+          </tr>
+          {% endif %}
+        {% endfor %}
+
+      </tbody>
+    </table>
+  </div>
+
+<!-- /Price responsive table -->

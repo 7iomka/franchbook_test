@@ -1,0 +1,15 @@
+# with AJAX withCredentials=false (cookies NOT sent)
+Header always set Access-Control-Allow-Origin "*"
+Header always set Access-Control-Allow-Methods "POST, GET, PUT, OPTIONS, PATCH, DELETE"
+Header always set Access-Control-Allow-Headers "X-Accept-Charset,X-Accept,Content-Type,Accept-Language,Accept-Charset,X-Request-With,Content-Length,Accept,Origin"
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_METHOD} OPTIONS
+RewriteRule ^(.*)$ $1 [R=200,L]
+#RewriteRule ^(.*)$ $1 [R=200,L,E=HTTP_ORIGIN:%{HTTP:ORIGIN}]
+
+#RewriteBase /
+#RewriteCond  %{REQUEST_FILENAME} !-f
+#RewriteCond  %{REQUEST_FILENAME} !-d
+#RewriteRule  ^(.*)$ index.php?customUrl=$1 [QSA,L]

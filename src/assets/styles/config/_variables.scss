@@ -1,0 +1,85 @@
+// ========================================================
+//
+// Variables
+//
+// ========================================================
+
+// Import design tokens (from ./src/assets/tokens)
+@import 'borders.json';
+@import 'breakpoints.json';
+@import 'colors.json';
+@import 'fonts.json';
+@import 'layers.json';
+@import 'sizes.json';
+@import 'spaces.json';
+
+$baseAssetsPath: '/assets/';
+$base-font: $font-family;
+
+
+$base-color--primary: palette(primary);
+$base-color--secondary: palette(secondary);
+$base-color--secondary_dark: palette(secondary, dark);
+
+// Top Bar
+$top-bar-color--background: palette(primary);
+
+
+
+// Banner
+// $banner-height--small: $size-large;
+// $banner-height--large: $size-xlarge;
+$banner-duration: 0.1s;
+
+// Navigation
+// $navigation-width--large: $size-xlarge;
+$navigation-duration: 0.2s;
+$navigation-color: white;
+$navigation-color--offset: palette(neutral, lightest);
+$navigation-color--text: palette(neutral, dark);
+$navigation-color--shadow: rgba(palette(neutral), 0.25);
+$navigation-color--background: palette(primary);
+$navigation-color--background-sub: palette(primary, light);
+$navigation-color--expand-icon: palette(secondary);
+$navigation-color--backdrop: rgba(palette(neutral, dark), 0.25);
+
+// Prose
+$prose-color--background: rgba(palette(neutral), 0.15);
+$prose-color--rule: rgba(palette(neutral), 0.25);
+$prose-color--shadow: rgba(palette(neutral), 0.25);
+
+// Color assignments
+$color-neutral: palette(neutral);
+$color-neutral--lightest: palette(neutral, lightest);
+$color-neutral--lighter: palette(neutral, lighter);
+$color-neutral--light: palette(neutral, light);
+$color-neutral--dark: palette(neutral, dark);
+$color-neutral--darker: palette(neutral, darker);
+$color-neutral--darkest: palette(neutral, darkest);
+
+$color-link: palette(secondary);
+$color-link--hover: palette(secondary, dark);
+$color-link--active: palette(secondary, light);
+
+// Buttons background
+$button-background--primary: palette(primary);
+$button-background--primary_hover: palette(primary, dark);
+$button-background--primary_active: palette(primary, light);
+
+$button-background--secondary: palette(secondary);
+$button-background--secondary_hover: palette(secondary, dark);
+$button-background--secondary_active: palette(secondary, light);
+
+$button-background--dark: palette(secondary, dark);
+$button-background--dark_hover: palette(secondary);
+$button-background--dark_active: #000;
+
+
+
+$color-ui-link: palette(primary);
+$color-ui-link--hover: palette(primary, light);
+$color-ui-link--active: palette(primary, dark);
+
+$color-focus: palette(primary, light);
+
+$color-text: black;

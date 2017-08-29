@@ -1,0 +1,9 @@
+variants:
+- name: default
+    
+- name: inline
+  context:
+    mods: [inline]
+- name: inline-order
+  context:
+    mods: [inline, order]

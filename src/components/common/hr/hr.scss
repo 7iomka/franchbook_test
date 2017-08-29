@@ -1,0 +1,13 @@
+.hr {
+  width: 100%;
+  height: 3px;
+  margin: 40px 0;
+  background-color: palette(primary);
+
+  &--h-1 {
+    height: 1px;
+  }
+  &--m-0 {
+    margin: 0;
+  }
+}

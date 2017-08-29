@@ -1,0 +1,25 @@
+default: with-addon-text
+variants:
+- name: with-addon-text
+  context:
+    disabled: false
+    label: false
+    name: some-name
+    value: 1
+    title: sometitle
+    type: text
+    addon:
+      type: text
+      content: "шт."
+- name: with-addon-component
+  context:
+    label: Text with button
+    name: some-name2
+    value: 3
+    title: sometitle
+    type: text
+    addon:
+      type: component
+      component: button
+      config:
+        label: Button with background secondary

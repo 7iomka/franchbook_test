@@ -1,0 +1,70 @@
+// ========================================================
+//
+// Application styles
+//
+// ========================================================
+
+
+// Helpers (кроме include-media)
+@import 'helpers/_mixins.scss';
+
+// Functions
+@import 'functions/**/*.scss';
+
+// Config
+@import 'config/**/*.scss';
+
+
+// Bootstrap grid system v4.1
+@import 'vendors/bootstrap/main.scss';
+
+// Helpers (include-media)
+@import 'helpers/_include-media.scss';
+
+
+// Base HTML element resets and styling
+// @import 'base/**/*.scss';
+// @import 'base/text';
+// @import 'base/forms';
+// @import 'base/grouping';
+// @import 'base/links';
+// @import 'base/sections';
+// @import 'base/tables';
+// @import 'base/embedded';
+// @import 'base/disabled';
+
+
+// Vendors
+// Bootstrap custom settings
+@import 'vendors/bootstrap/custom.scss';
+// @import 'vendors/aos/aos.scss';
+// @import 'vendors/jquery.mmenu/jquery.mmenu.oncanvas.scss';
+// @import 'vendors/swiper/swiper.min.scss';
+// @import 'vendors/PhotoSwipe/main.scss';
+// @import 'vendors/PhotoSwipe/default-skin/default-skin.scss';
+// @import 'vendors/PhotoSwipe/micro-skin.scss';
+@import 'vendors/lazyYT/lazyYT.custom.scss';
+// @import 'vendors/chosen/chosen.custom.scss';
+@import 'vendors/flatpickr/flatpickr.min';
+@import 'vendors/flatpickr/flatpickr.custom.scss';
+@import 'vendors/ripple.js/ripple.scss';
+// @import 'vendors/lightgallery/lightgallery.scss';
+// @import 'vendors/jquery.qtip/jquery.qtip.scss';
+// @import 'vendors/jquery.fancybox/jquery.fancybox.min';
+@import 'vendors/jquery.fancybox/jquery.fancybox.min';
+@import 'vendors/jquery.fancybox/jquery.fancybox.custom.scss';
+@import 'vendors/slick/slick.scss';
+@import 'vendors/slick/slick.custom-theme.scss';
+// @import 'https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/5.5.3/core/css/jquery.mmenu.all.css';
+
+
+// Components
+@import '../../components/macros/**/*.scss';
+@import '../../components/common/**/*.scss';
+@import '../../components/global/**/*.scss';
+@import '../../components/partials/**/*.scss';
+@import '../../components/sections/**/*.scss';
+@import '../../components/templates/**/*.scss';
+
+// Themes
+// @import 'themes/**/*.scss';

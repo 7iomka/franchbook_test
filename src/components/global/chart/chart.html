@@ -1,0 +1,26 @@
+<div class="chart" data-aos="fade"
+     data-aos-easing="ease-in-sine" data-aos-delay="350">
+  <div class="chart__header">
+    <ul class="chart__y-axis">
+    	{% for item in yAxis %}
+        <li class="chart__y-axis-item {{ 'chart__y-axis-item--first' if loop.index == 1 }}">{{ item }}</li>
+    	{% endfor %}
+    </ul>
+    <dl class="chart__scene">
+      {% for year, value in values %}
+        <dt class="chart__term">{{ year }}</dt>
+        <dd class="chart__indicator {{ 'chart__indicator--first' if loop.index == 1 }}">
+          <span class="chart__indicator-label">{{ value }}</span>
+          <span class="chart__indicator-value" style="height: {{ (value/yMax)*100 }}%"></span>
+        </dd>
+      {% endfor %}
+    </dl>
+  </div>
+  <div class="chart__footer">
+    <ul class="chart__x-axis">
+      {% for item in xAxis %}
+        <li class="chart__x-axis-item">{{ item }}</li>
+    	{% endfor %}
+    </ul>
+  </div>
+</div>

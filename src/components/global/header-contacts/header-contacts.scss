@@ -1,0 +1,29 @@
+.header-contacts {
+  margin: 10px 0;
+  @include media(">=lg") {
+    margin: 0;
+  };
+  &__phones {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+      @include media(">=lg") {
+        justify-content: flex-end;
+        text-align: right;
+      };
+  }
+  &__phone {
+      font-size: 25px;
+      font-weight: 700;
+      padding-left: 15px;
+  }
+
+  &__action {
+      text-align: center;
+      @include media(">=lg") {
+        text-align: right;
+      };
+  }
+
+}

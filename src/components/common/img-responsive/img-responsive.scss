@@ -1,0 +1,138 @@
+.img-responsive {
+  position: relative;
+
+  &__item {
+    max-width: 100%;
+  }
+
+}
+
+
+
+@mixin imagemodal($classname: 'img-responsive', $width: auto, $setWidthOnly: false) {
+  @if ($setWidthOnly == true) {
+      .#{$classname}__link {
+        width: #{$width}px;
+      }
+  }
+  @else {
+    .#{$classname}__link {
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+        width: #{$width};
+        max-width: 100%;
+        &:hover {
+              .#{$classname}__item {
+                transform: scale(1.1,1.1);
+              }
+              .#{$classname}__overlay {
+                // box-shadow: 0 0 0 2px rgb(248, 211, 71) inset;
+                background-color: rgba(0,0,0,.5);
+              }
+              .#{$classname}__overlay-icon {
+                transform: scale(1);
+                opacity: 1;
+              }
+            }
+    }
+
+    .#{$classname}__item {
+        transform: scale(1);
+        transition: transform .75s ease 0s;
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+
+    .#{$classname}__overlay {
+      background-color: rgba(0,0,0,0);
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      border: none;
+      right: 0;
+      top: 0;
+      transition: background-color .15s ease 0s;
+    }
+
+    .#{$classname}__overlay-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 40px;
+      width: 80px;
+      height: 80px;
+      line-height: 80px;
+      text-align: center;
+      margin-left: -40px;
+      margin-top: -40px;
+      border-radius: 50%;
+      background: palette(secondary);
+      color: white;
+      opacity: 0;
+      transform: scale(1.5);
+      transition: transform .7s cubic-bezier(0.18, 0.89, 0.32, 1.28), opacity .3s ease 0s;
+    }
+    .#{$classname}__overlay-icon-img {
+      vertical-align: middle;
+      margin-top: -8px;
+    }
+
+    @include media("<lg") {
+      .#{$classname}__link {
+          display: inline-block;
+          margin: 8px;
+      }
+    };
+  }
+
+}
+
+/**
+ * with link and overlay
+ */
+
+.img-responsive--with-overlay {
+  text-align: center;
+  /** call default for all **/
+  //  @include imagemodal();
+  // BEM
+  .img-responsive {
+    &__link {
+      position: relative;
+      z-index: 2;
+      display: block;
+      overflow: hidden;
+      &:before, &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        height: 100%;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+      }
+      &:before {
+        background: url('../vectors/resize.svg') 50% 50% no-repeat;
+        background-size: 64px 64px;
+        transform: scale(0.7);
+        z-index: 2;
+      }
+      &:after {
+        z-index: 1;
+        background-color: rgba(82, 69, 69, 0.6);
+        background-image: linear-gradient(to left, rgba(11, 130, 210, 0.25) 0%, rgba(102, 143, 191, 0.25) 50%, rgba(48, 61, 122, 0.25) 100%);
+      }
+
+      &:hover:before,
+      &:hover:after {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  }
+
+}

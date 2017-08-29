@@ -1,0 +1,40 @@
+// Bootstrap overrides
+//
+// Copy variables from `_variables.scss` to this file to override default values
+// without modifying source files.
+
+// CREATING A 5-th COLUMN GRID WITH BOOTSTRAP 4
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+@include media(">=sm") {
+  .col-sm-5ths {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+};
+@include media(">=md") {
+  .col-md-5ths {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+};
+@include media(">=lg") {
+  .col-lg-5ths {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+};
+@include media(">=xl") {
+  .col-xl-5ths {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+};

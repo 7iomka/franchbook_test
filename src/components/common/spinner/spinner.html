@@ -1,0 +1,14 @@
+<div class="spinner" data-trigger="spinner">
+  <label class="spinner__label">
+    <span class="spinner__decrement" data-spin="down">–</span>
+    <input class="spinner__input" type="text"
+      {% if name %} name="{{ name }}"{% endif -%}
+      {% if id %} id="{{ id }}"{% endif -%}
+      {% if min %} data-min="{{ min }}"{% else %}  data-min="0"{% endif -%}
+      {% if max %} data-max="{{ max }}"{% endif -%}
+      {% if value %} value="{{ value }}"{% else %} value="0" {% endif -%}
+      {% if type %} data-rule="{{ type }}"{% endif -%}
+     />
+    <span class="spinner__increment" data-spin="up">+</span>
+  </label>
+</div>

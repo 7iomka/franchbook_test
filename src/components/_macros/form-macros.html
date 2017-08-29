@@ -1,0 +1,7 @@
+{% macro getComponentFromHandle(config) %}
+
+		{# {% render "@"+config.component, config.component.config %} #}
+		{% set handle = "@"+config.component %}
+		{% render handle, config.component.config %}
+
+{% endmacro %}

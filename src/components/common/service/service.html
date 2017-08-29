@@ -1,0 +1,17 @@
+<div class="service{% for mod in mods %} service--{{ mod }}{% endfor %}" data-aos="fade"
+     data-aos-easing="ease-in-sine"
+     data-aos-delay="{{ delay }}">
+  {%- if icon or link -%}
+    <figure class="service__figure">
+      {%- if icon -%}
+        <img src="{{ icon | path }}" class="service__icon">
+      {%- endif -%}
+    </figure>
+  {%- endif -%}
+  <h3 class="service__title">
+    {{ title }}
+  </h3>
+  <div class="service__description">
+    {{ description }}
+  </div>
+</div>

@@ -1,0 +1,96 @@
+// backdrop
+$fancybox-backdrop-bg-color: #2f2b39;
+// $fancybox-backdrop-bg-image: linear-gradient(to left, #26232e 0%, #484256 50%, #26232e 100%);
+$fancybox-backdrop-bg-image: linear-gradient(to left, rgba(11, 130, 210, 0.25) 0%, rgba(102, 143, 191, 0.25) 50%, rgba(48, 61, 122, 0.25) 100%);
+
+// close button
+$fancybox-close-button__font-size: 5em;
+$fancybox-close-button__width: 1em;
+$fancybox-close-button__height: 1em;
+$fancybox-close-button__color: $base-color--secondary_dark;
+$fancybox-close-button__background: #fff;
+
+.fancybox-bg {
+    background-color: $fancybox-backdrop-bg-color;
+    background-image: $fancybox-backdrop-bg-image;
+}
+.fancybox-container--ready .fancybox-bg {
+  opacity: 0.95;
+}
+
+// default fancybox close button
+.fancybox-close-small {
+  position: absolute;
+  bottom: 0;
+  top: 2em;
+  right: 3.5em;
+  width: 40px;
+  height: 40px;
+  z-index: 99;
+
+  &:after {
+    top:0;
+    right: 0;
+    font-size: 35px;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    @include media(">=md") {
+      font-size: $fancybox-close-button__font-size;
+      width: $fancybox-close-button__width;
+      height: $fancybox-close-button__height;
+      line-height: 1;
+    };
+    font-weight: 700;
+    color: $fancybox-close-button__color;
+    background: $fancybox-close-button__background;
+    @include media("<md") {
+      background: #f3f3f3;
+    };
+  }
+
+
+
+  &:focus:after {
+    outline: none
+  }
+}
+
+// ie 10+ fallback with large font-size
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+   .fancybox-close-small {
+     &:after {
+       font-size: 5rem;
+     }
+   }
+}
+
+// Custom preloader
+.fancybox-preloader {
+  background: none;
+}
+
+.fancybox-fx-slide.fancybox-slide--previous,
+.fancybox-fx-slide.fancybox-slide--next {
+  transition: 0.5s ease all;
+}
+
+.fancybox-fx-slide.fancybox-slide--previous {
+	/* start properties for upcoming slide if user navigates to previous gallery item */
+  // opacity: 0;
+  transform: translateX(-100%) scale(0.8);
+  transform: translateX(-100vw) scale(0.8);
+}
+
+.fancybox-fx-slide.fancybox-slide--next {
+	/* start properties for upcoming slide if user navigates to next gallery item */
+  transform: translateX(100%) scale(0.8);
+  transform: translateX(100vw) scale(0.8);
+  // opacity: 0;
+}
+
+.fancybox-fx-slide.fancybox-slide--current {
+	/* final properties */
+  transform: none;
+
+}

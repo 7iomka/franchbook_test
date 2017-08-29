@@ -1,0 +1,35 @@
+context:
+  menuPages:
+  - title: Услуги
+    url: '#services'
+  - title: Стекло в интерьере
+    url: '#our-works'
+  - title: Виды стекла
+    url: '#assortiment'
+  - title: Как мы работаем
+    url: '#how'
+  - title: Спецпредложение
+    url: '#offer'
+  - title: Оплата
+    url: '#pay'
+  - title: Контакты
+    url: '#contacts'
+
+  mobileColumns:
+  - menuPages:
+    - title: Услуги
+      url: '#services'
+    - title: Стекло в интерьере
+      url: '#our-works'
+    - title: Виды стекла
+      url: '#assortiment'
+    - title: Как мы работаем
+      url: '#how'
+
+  - menuPages:
+    - title: Спецпредложение
+      url: '#offer'
+    - title: Оплата
+      url: '#pay'
+    - title: Контакты
+      url: '#contacts'

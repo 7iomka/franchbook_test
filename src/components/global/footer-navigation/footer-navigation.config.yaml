@@ -1,0 +1,18 @@
+context:
+  pages:
+  - title: Главная
+    url: /home
+  - title: Каталог
+    url: /catalog
+  - title: О компании
+    url: /o-kompanii
+  - title: Производство
+    url: /proektirovshhikam-i-montazhnikam
+  - title: Благодарности
+    url: /proektirovshhikam-i-montazhnikam
+  - title: Новости
+    url: /karta-dilerov
+  - title: Карта дилеров
+    url: /karta-dilerov
+  - title: Контакты
+    url: /kontakty

@@ -1,0 +1,64 @@
+.form {
+
+  &-group {
+    margin-bottom: 2.8em;
+  }
+  &-label {
+    font-size: 2em;
+    line-height: 1;
+    margin-bottom: em-rel(0.5, 2);
+    display: block;
+  }
+  &-control {
+    font-size: 1.9em;
+    line-height: 1;
+    padding: em-rel(1.6, 1.9) em-rel(1.7, 1.9);
+    border-radius: em-rel(0.3, 1.9);
+    border-color: #c4c4c4;
+    &:focus {
+      border-color: $base-color--primary;
+      box-shadow: 0 0 0 2px $base-color--primary inset;
+    }
+    // states
+    &-success,
+    &-danger {
+      padding-right: 2.25em;
+      background-repeat: no-repeat;
+      background-position: center right .5625em;
+      background-size: 1.125em 1.125em;
+    }
+
+  }
+
+  @at-root .has-success, .has-danger {
+    .form-control {
+      &-success {
+        background-image: url('../images/icons/form/form-control-success.png');
+        font-weight: 500;
+      }
+      &-danger {
+        background-image: none;
+      }
+    }
+  }
+
+  &-control-feedback {
+      margin-top: 0.25em;
+      font-size: 1.5em;
+      display: block;
+  }
+
+  &-button {
+    &--submit {
+      font-size: 1.9em;
+      line-height: 1;
+      padding: em-rel(2.4, 1.9);
+      text-transform: uppercase;
+      font-weight: bold;
+      border-radius: em-rel(4, 1.9);
+      margin: auto;
+      display: block;
+    }
+  }
+
+}

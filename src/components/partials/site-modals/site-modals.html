@@ -1,0 +1,112 @@
+{% from "@modal-macro" import Modal,
+ActionModal %}
+<div class="site-modals">
+
+  <!-- Онлайн заявка на перевозку -->
+  {% set orderIcon = '/assets/images/icons/action-modals/order.png' | path %}
+  {% call ActionModal(
+      {
+        id: 'action-order',
+        mods: ['960'],
+        title: 'Заявка на перевозку',
+        icon: orderIcon,
+        wrapper: 'action-modal__content'
+      })
+    -%}
+  <div class="primary-container">
+    <div class="action-modal__annonce">Заполните необходимые данные и наш менеджер свяжется с Вами для уточнения деталей заказа
+    </div>
+    <form class="form">
+      <div class="row justify-content-center">
+        <!-- Routes -->
+        <div class="col-12 col-sm-6">
+          <div class="form-group">
+            <label class="form-label" for="user_from--order">Откуда:</label>
+            <input type="text" class="form-control" id="user_from--order" name="user_from--order" placeholder="Москва">
+          </div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <div class="form-group">
+            <label class="form-label" for="user_to--order">Куда:</label>
+            <input type="text" class="form-control" id="user_to--order" name="user_to--order" placeholder="Санкт-Петербург">
+          </div>
+        </div>
+        <!-- Dates -->
+        <div class="col-12 col-sm-6">
+          <div class="form-group">
+            <label class="form-label" for="user_date-start--order">Дата погрузки:</label>
+            <input type="text" class="form-control flatpickr flatpickr--calendar-only" id="user_date-start--order" name="user_date-start--order" placeholder="">
+          </div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <div class="form-group">
+            <label class="form-label" for="user_date-finish--order">Желаемая дата отгрузки:</label>
+            <input type="text" class="form-control flatpickr flatpickr--calendar-only" id="user_date-finish--order" name="user_date-finish--order" placeholder="">
+          </div>
+        </div>
+        <!-- Caracteristics -->
+        <div class="col-12 col-sm-6">
+          <div class="form-group">
+            <label class="form-label" for="user_weight--order">Вес:</label>
+            <input type="text" class="form-control" id="user_weight--order" name="user_weight--order" placeholder="0,5 тонн">
+          </div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <div class="form-group">
+            <label class="form-label" for="user_dimensions--order">Габариты:</label>
+            <input type="text" class="form-control" id="user_dimensions--order" name="user_dimensions--order" placeholder="2x6x4 м">
+          </div>
+        </div>
+        <!-- User contacts -->
+        <div class="col-12 col-sm-6">
+          <div class="form-group">
+            <label class="form-label" for="user_phone--order">Телефон*:</label>
+            <input type="text" class="form-control" id="user_phone--order" name="user_phone--order" placeholder="+7 987 654 32 10">
+          </div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <div class="form-group">
+            <label class="form-label" for="user_name--order">Имя*:</label>
+            <input type="text" class="form-control" id="user_name--order" name="user_name--order" placeholder="Александр">
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-group">
+            <label class="form-label" for="user_comments--order">Комментарии:</label>
+            <textarea class="form-control" id="user_comments--order" name="user_comments--order" placeholder="Не обязательно" rows="5" cols="40"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <button class="c-button c-button--primary form-button form-button--submit modal__button mt-2">Отправить заявку</button>
+    </form>
+  </div>
+  <div class="success-container">
+    <div class="preloader action-modal__preloader"></div>
+    <div class="order-data" style="display: none;">
+
+      <p class="order-data__success-text">В ближайшее время наш менеджер свяжется с Вами для уточнения деталей заказа. <br/> Спасибо!</p>
+      <button class="c-button c-button--dark modal__button-close modal-close ">Вернуться на сайт</button>
+    </div>
+  </div>
+  {%- endcall %}
+
+  <!-- Карта в контактах -->
+  {% call Modal(
+      {
+        id: 'contacts-map-modal',
+        customClassList: 'contacts-map',
+        mods: ['1920'],
+        wrapper: 'contacts-map__container'
+      })
+    -%}
+  <div class="contacts-map__preview" style="background: url('{{ '/assets/images/sections/transport-geography/map__preview-bg.png' | path }}') 50% 0 no-repeat;"></div>
+  <div class="contacts-map__preloader-overlay">
+    {% include "@preloader--contacts-map" %}
+  </div>
+  <div class="contacts-map__wrapper">
+    <div id="contacts-map"></div>
+  </div>
+  {%- endcall %}
+
+</div>

@@ -1,0 +1,117 @@
+$nav-toggler__menu-base-height: 6em;
+
+.navigation-toggler-wrapper {
+  padding: 0;
+  width: 120px;
+  height: $nav-toggler__menu-base-height;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  //Media Queries
+  // @include media(">=lg") {
+  //   display: none;
+  // }
+}
+
+.navigation-toggler {
+  /**
+   * local variables
+   */
+  $color: white;
+  $toggler-width: 4em;
+  $height-icon: 1.8em;
+  $width-line: 2.6em;
+  $height-line: 2px;
+  $transition-time: 0.4s;
+  $rotation: 45deg;
+  $translateY: ($height-icon / 2);
+  $translateX: 0;
+  /**
+   * styles
+   */
+  cursor: pointer;
+  width: $toggler-width;
+  height: $height-icon;
+  position: relative;
+  display: block;
+  // vertical flex align center
+  margin: auto 0;
+  //Media Queries
+  // @include media(">=lg") {
+  //   display: none;
+  // }
+  /**
+   * lines of hamburger - state default
+   */
+  &__line {
+    display: block;
+    background: $color;
+    width: $width-line;
+    height: $height-line;
+    position: absolute;
+    left: 0;
+    //border-radius:($height-line / 2);
+    transition: all $transition-time;
+
+    &--1 {
+      top: 0;
+      width: $width-line + 1em;
+    }
+
+    &--2 {
+      top: 50%;
+    }
+
+    &--3 {
+      top: 100%;
+    }
+  }
+  /**
+    * lines - state hover
+    */
+  &:focus,
+  &:hover {
+    .navigation-toggler__line {
+      &--1 {
+        transform: translateY($height-line / 2 * -1);
+      }
+
+      &--3 {
+        transform: translateY($height-line / 2);
+      }
+    }
+  }
+  /**
+  * lines - state if toggler has active (expanded)
+  */
+  &.active {
+    .navigation-toggler__line {
+      &--1 {
+        transform: translateY($translateY) translateX($translateX) rotate($rotation);
+        width: $width-line;
+      }
+
+      &--2 {
+        opacity: 0;
+      }
+
+      &--3 {
+        transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
+      }
+    }
+  }
+  /**
+ * hamburger label
+ */
+  &__label {
+    font-size: 1.9em;
+    // line-height: 1;
+    // padding-left: $toggler-width/1.9 + 0.4;
+    padding-left: em-rel($toggler-width/1em, 1.9);
+    color: $color;
+
+    // @include media("<=375px") {
+    //  display:none;
+    // }
+  }
+}

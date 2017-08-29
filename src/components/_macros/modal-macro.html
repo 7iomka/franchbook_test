@@ -1,0 +1,42 @@
+
+{# BASIC Modal #}
+{% macro Modal(config) %}
+<div style="display: none;" class="modal {% for mod in config.mods -%} modal--{{ mod }} {%- endfor %} {{ config.customClassList }}" id="{{ config.id }}">
+  {% if config.title %}
+  <div class="modal__header">
+    <h2 class="modal__title">{{ config.title }}</h2>
+  </div>
+  {% endif %}
+	<div class="modal__body">
+    {% if config.wrapper %}
+      <div class="{{ config.wrapper }}">
+        {{ caller() }}
+      </div>
+    {% else %}
+        {{ caller() }}
+    {% endif %}
+  </div>
+</div>
+{% endmacro %}
+
+
+{# Action Modal #}
+{% macro ActionModal(config) %}
+<div style="display: none;" class="action-modal modal {% for mod in config.mods -%} modal--{{ mod }} {%- endfor %} {{ config.customClassList }}" id="{{ config.id }}">
+  <div class="modal__header action-modal__header">
+    <figure class="action-modal__figure-icon">
+      <img class="action-modal__icon" src="{{ config.icon }}" />
+    </figure>
+    <h2 class="modal__title action-modal__title {{ config.title_customClassList }}">{{ config.title }}</h2>
+  </div>
+	<div class="modal__body action-modal__body">
+    {% if config.wrapper %}
+      <div class="{{ config.wrapper }}">
+        {{ caller() }}
+      </div>
+    {% else %}
+        {{ caller() }}
+    {% endif %}
+  </div>
+</div>
+{% endmacro %}

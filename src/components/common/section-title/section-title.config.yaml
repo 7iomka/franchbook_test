@@ -1,0 +1,5 @@
+title: section-title
+variants:
+  - name: default
+    context:
+      title: Заголовок секции

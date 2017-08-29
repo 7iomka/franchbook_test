@@ -1,0 +1,24 @@
+.logo {
+  @include media("<md") {
+    flex-basis: 0%;
+    flex-grow: 1;
+    flex: 1 0;
+  };
+
+  &__link {
+    display: block;
+  }
+
+  svg {
+    fill: none;
+    @include media("<lg"){
+      height: 70px;
+    };
+    @include media("<md"){
+      display: block;
+      margin: auto;
+      height: 50px;
+    };
+
+  }
+}

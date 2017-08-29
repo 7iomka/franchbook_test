@@ -1,0 +1,49 @@
+// Helpers (кроме include-media)
+@import '../helpers/_mixins.scss';
+
+// Functions
+@import '../functions/**/*.scss';
+
+// Config
+@import '../config/**/*.scss';
+
+// Webfonts
+// @import url('http://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:400,700|Source+Serif+Pro:400,400italic');
+
+@import '../fonts/fonts.scss';
+
+// Bootstrap grid system v4.1
+@import '../vendors/bootstrap/variables';
+@import '../vendors/bootstrap/mixins';
+
+// Helpers (include-media)
+@import '../helpers/_include-media.scss';
+
+
+// Reset and dependencies
+@import "../vendors/bootstrap/normalize";
+
+
+
+// Core CSS
+@import "../vendors/bootstrap/reboot";
+@import "../vendors/bootstrap/utilities";
+
+// Base HTML element resets and styling
+@import '../base/**/*.scss';
+
+
+// @import "type";
+// @import "images";
+// @import "code";
+@import "../vendors/bootstrap/grid";
+
+
+// @import 'filename';
+@import '../../../components/partials/site-header/site-header.scss';
+@import '../../../components/global/logo/logo.scss';
+
+
+
+
+@import 'vendors/aos/aos';

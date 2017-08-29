@@ -1,0 +1,174 @@
+variants:
+  - name: pricetable
+    context:
+      mods: [pricetable]
+      strongCellsIds:
+        - 1
+        - 6
+        - 7
+      transparentCellsIds:
+        - 8
+        - 9
+        - 10
+      thead:
+        - Изделие
+        - Артикул
+        - Вес (кг)
+        - Объем (м<sup>3</sup>)
+        - Кол-во в <br/>упаковке (шт)
+        - Цена за шт. <br />(руб)
+        - Ваша цена <br />за шт. (руб)
+        - Кол-во <br />упаковок
+        - Кол-во <br />штук
+        - Стоимость
+      rows:
+        - cells:
+          - 100 мм
+          - 411000
+          - 0,066
+          - 0,009
+          - 40
+          - 29,04
+          - 28,04
+          - center: true
+            component: spinner
+            config:
+          - center: true
+            component: form-input--with-addon-text
+            config:
+              value: 143
+              title: 100mm
+          - center: true
+            component: price-cell
+            config:
+              price: 11000
+
+
+        - cells:
+          - 50 мм
+          - 405000
+          - 0,013
+          - 0,003
+          - 60*
+          - 15,68
+          - 14,99
+          - center: true
+            component: spinner
+            config:
+          - center: true
+            component: form-input--with-addon-text
+            config:
+              disabled: true
+              value: 143
+              title: 50mm
+          - center: true
+            component: price-cell
+            config:
+              price: 11200
+
+        - cells:
+          - 40 мм
+          - 411000
+          - 0,066
+          - 0,009
+          - 40
+          - 29,04
+          - 28,04
+          - center: true
+            component: spinner
+            config:
+          - center: true
+            component: form-input--with-addon-text
+            config:
+              value: 143
+              title: 100mm
+          - center: true
+            component: price-cell
+            config:
+              price: 11000
+
+        - cells:
+          - 32 мм
+          - 404000
+          - 0,066
+          - 0,009
+          - 40
+          - 29,04
+          - 28,04
+          - center: true
+            component: spinner
+            config:
+          - center: true
+            component: form-input--with-addon-text
+            config:
+              value: 143
+              title: 100mm
+              disabled: true
+          - center: true
+            component: price-cell
+            config:
+              price: 11000
+
+  - name: cart
+    context:
+      mods: [pricetable, cart]
+      transparentCellsIds:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+      thead:
+        - Изделие
+        - Стоимость <br />за штуку
+        - Количество <br />упаковок
+        - Количество <br />штук
+        - Общая <br />Стоимость
+        - " "
+      rows:
+        - class: product
+          cells:
+          - custom: true
+            class: product__cell-primary
+            content: '<div class="product__title"><strong>Заглушки из ПП 100 мм</strong></div>
+              <div class="product__data">Артикул: 411000; Вес: 0,066 кг; Объем: 0,009 м3; В упаковке 80 шт;</div>'
+          - "<strong>29,04</strong> руб. / шт."
+          - center: true
+            component: spinner
+            config:
+          - center: true
+            component: form-input--with-addon-text
+            config:
+              value: 143
+              title: 100mm
+          - center: true
+            component: price-cell
+            config:
+              price: 11900
+          - custom: true
+            class: product__cell-last
+            content: '<div class="product__remove">Удалить</div>'
+
+        - class: product
+          cells:
+          - custom: true
+            class: product__cell-primary
+            content: '<div class="product__title"><strong>Заглушки из ПП 100 мм</strong></div>
+              <div class="product__data">Артикул: 411000; Вес: 0,066 кг; Объем: 0,009 м3; В упаковке 80 шт;</div>'
+          - "<strong>29,04</strong> руб. / шт."
+          - center: true
+            component: spinner
+            config:
+          - center: true
+            component: form-input--with-addon-text
+            config:
+              value: 143
+              title: 100mm
+          - center: true
+            component: price-cell
+            config:
+              price: 11900
+          - custom: true
+            class: product__cell-last
+            content: '<div class="product__remove">Удалить</div>'

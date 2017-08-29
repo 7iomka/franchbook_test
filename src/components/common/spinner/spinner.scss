@@ -1,0 +1,63 @@
+$spinner__border-color: palette(primary);
+$spinner__button-text-color: #fff;
+$spinner__button-bg-color: palette(primary);
+$spinner__button-bg-color--hover: palette(primary, light);
+$spinner__button-bg-color--active: palette(primary, dark);
+$spinner__button-width: 30px;
+$spinner__button-height: 30px;
+$spinner__button-font-size: 30px;
+$spinner__input-width: 40px;
+$spinner__input-font-size: 20px;
+
+.spinner {
+
+  /** label wrapper **/
+  &__label {
+    display: flex;
+  }
+
+  /** buttons **/
+  &__increment,
+  &__decrement {
+      background-color: $spinner__button-bg-color;
+      color: $spinner__button-text-color;
+      cursor: pointer;
+      display: inline-block;
+      line-height: $spinner__button-font-size;
+      font-size: $spinner__button-font-size;
+      width: $spinner__button-width;
+      padding: 0 5px;
+      &:hover {
+        background-color: $spinner__button-bg-color--hover ;
+      }
+      &:active {
+        background-color: $spinner__button-bg-color--active ;
+      }
+  }
+
+  /** common styles **/
+  &__input,
+  &__increment,
+  &__decrement {
+      outline: none;
+      text-align: center;
+      vertical-align: top;
+      border: 1px solid $spinner__border-color;
+      height: $spinner__button-height;
+      user-select: none;
+  }
+
+  /** separate styles **/
+  &__input {
+      width: $spinner__input-width;
+      font-size: $spinner__input-font-size;
+  }
+
+  &__decrement {
+      border-right: none;
+  }
+  &__increment {
+      border-left: none;
+  }
+
+}

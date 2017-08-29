@@ -1,0 +1,9 @@
+<div class="site-wrapper">
+  {% render "@site-header", siteHeaderConfig, true %}
+  <main class="c-main" role="main">
+  {% block main %}
+  {% endblock %}
+  </main>
+  {% render "@site-modals", siteFooterConfig, true %}
+  {% render "@site-footer", siteFooterConfig, true %}
+</div>

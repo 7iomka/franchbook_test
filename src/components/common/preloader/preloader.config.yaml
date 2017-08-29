@@ -1,0 +1,19 @@
+variants:
+  - name: default
+  - name: visible
+    context:
+      visible: true
+  - name: dark
+    context:
+      mods: [dark]
+  - name: visible-dark
+    context:
+      visible: true
+      mods: [dark]
+  - name: fixed
+    context:
+      mods: [fixed]
+  - name: visible-fixed
+    context:
+      visible: true
+      mods: [fixed]

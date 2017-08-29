@@ -1,0 +1,44 @@
+<header class="header site-header">
+    <div class="header__back">
+    </div>
+
+    <div class="header__top">
+       <div class="container">
+         <div class="row align-items-center">
+           <div class="col-12 col-md-7">
+             <div class="header__logo" data-aos="fade-down">
+               {% render "@logo" %}
+             </div>
+           </div>
+
+           <div class="col-12 col-md-5">
+             <div class="header__contacts" data-aos="fade-down">
+               <ul class="header__phones">
+                 <li>
+                   <a href="tel:+78123275127" class="phone">+7 (812) 327-51-27</a>
+                 </li>
+               </ul>
+             </div>
+           </div>
+         </div>
+       </div>
+    </div>
+  <!--  <div class="header__square-shadow header__square-shadow--mobile"></div>-->
+    <div class="header__body">
+      <div class="header__relative-content">
+        <div class="container">
+          <h1 class="site-title">
+            Visa lend
+          </h1>
+          <div class="header__action" >
+            {% render "@button--primary", {
+             label: 'Оставить заявку',
+             customClassList: 'header__action-button modal-link',
+             attrs: {
+               'data-modal-target':'#action-order'
+             }
+           }, true %}
+          </div>
+        </div>
+      </div>
+   </header>

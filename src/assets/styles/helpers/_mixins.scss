@@ -1,0 +1,129 @@
+// =========================================================
+//
+// General mixins
+//
+// =========================================================
+
+@mixin hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+@mixin ui-link($background: false) {
+  color: $navigation-color--text;
+
+  &:hover {
+    color: $color-ui-link--hover;
+
+    @if $background {
+      background-color: lighten($color-neutral--lightest, 1%);
+    }
+  }
+
+  &:active {
+    color: $color-ui-link--active;
+
+    @if $background {
+      background-color: darken($color-neutral--lightest, 1%);
+    }
+  }
+}
+/** Main mixins **/
+
+/**
+ * Make border gradient without need twice block
+ */
+@mixin border-gradient($from, $to, $width, $direction: horizontal) {
+
+  @if $direction == horizontal {
+    $startDirection: left;
+    border-left: $width solid $from;
+    border-right: $width solid $to;
+    border-top: none;
+    border-bottom: none;
+    background-image:
+      // both needed for top & bottom
+      linear-gradient($startDirection, $from, $to),
+      linear-gradient($startDirection, $from, $to);
+      // 100% left & right, $width px top & bottom
+      background-size: 100% $width;
+      background-position: 0 100%, 0 0;
+  }
+  @else {
+    $startDirection: top;
+    border-top: $width solid $from;
+    border-bottom: $width solid $to;
+    border-left: none;
+    border-right: none;
+    background-image:
+      // both needed for top & bottom
+      linear-gradient($startDirection, $from, $to),
+      linear-gradient($startDirection, $from, $to);
+      // 100% left & right, $width px top & bottom
+      background-size: $width 100%;
+      background-position: 0% 100%, 100% 0;
+  }
+
+  background-repeat: no-repeat;
+  background-clip: border-box;
+}
+
+/**
+ * Make text gradient with fallback of clean color text
+ * dir: left/top
+ */
+@mixin font-gradient($from, $to, $dir, $fallbackColor: $from,  $fromPercent: 0%, $toPercent: 100%) {
+  color: $fallbackColor;
+  background: -webkit-linear-gradient($dir, $from $fromPercent, $to $toPercent);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+/**
+ * Calc em
+   emValue: value in em necessary for calculating the font size of the parent
+   context: font-size of parent (in em) or by default: rem-baseline: 10px (defined in rem.scss)
+   ** Ex: em-rel(0.75, 3) in case with 3em font-size of parent and for ex. 0.75em margin
+ */
+@function em-rel($emValue, $context: 1){
+  @return ($emValue / $context) * 1em;
+}
+
+
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass functions.
+// -----------------------------------------------------------------------------
+
+/// Native `url(..)` function wrapper
+/// @param {String} $base - base URL for the asset
+/// @param {String} $type - asset type folder (e.g. `fonts/`)
+/// @param {String} $path - asset path
+/// @return {Url}
+@function asset($base, $type, $path) {
+  @return url($base + $type + $path);
+}
+
+/// Returns URL to an image based on its path
+/// @param {String} $path - image path
+/// @param {String} $base [$base-url] - base URL
+/// @return {Url}
+/// @require $baseAssetsPath
+@function image($path, $base: $baseAssetsPath) {
+  @return asset($base, 'images/', $path);
+}
+
+/// Returns URL to a font based on its path
+/// @param {String} $path - font path
+/// @param {String} $base [$base-url] - base URL
+/// @return {Url}
+/// @require $baseAssetsPath
+@function font($path, $base: $baseAssetsPath) {
+  @return asset($base, 'fonts/', $path);
+}

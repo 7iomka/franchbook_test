@@ -1,0 +1,110 @@
+$pg_parentClass: '.product-group__item';
+.product-group__item {
+
+    background: #fbfbfb;
+    padding: 25px 20px;
+    border: 1px solid #e8e8e8;
+    margin-bottom: 60px;
+    &:last-child {
+      margin-bottom: 20px;
+    }
+
+  /**
+   * Title
+   */
+  &-title {
+    font-size: 20px;
+    @include media(">=sm") {
+      font-size: 25px;
+    };
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 0.4em;
+  }
+  /**
+   * Header
+   */
+  &-header {
+    padding: 30px 0;
+    border: 3px solid palette(primary);
+    border-left: 0;
+    border-right: 0;
+  }
+  /**
+   * Description
+   */
+  &-description {
+    font-size: 18px;
+    line-height: 1.11111;
+  }
+  /**
+   * Advantages
+   */
+  &-advantages{
+    margin-top: 25px;
+    font-weight: bold;
+  }
+  @at-root .product-group__item-description ul, .page-description ul {
+     @extend #{$pg_parentClass}-advantages;
+   }
+  /**
+   * single advantage
+   */
+  &-advantage {
+    &:before {
+      content: "";
+      display: inline-block;
+      height: 5px;
+      width: 5px;
+      background: black;
+      border-radius: 50%;
+      background-clip: padding-box;
+      vertical-align: middle;
+      margin-top: -5px;
+      margin-right: 3px;
+    }
+  }
+    @at-root .product-group__item-description ul li, .page-description ul li {
+      @extend #{$pg_parentClass}-advantage;
+    }
+
+  /**
+   * pricetable container
+   */
+
+  &-pricetable {
+    padding-top: 15px;
+  }
+
+  /**
+   * hr
+   */
+   &-hr {
+     width: 392px;
+     margin: 0 0 0 auto;
+     max-width: 100%;
+  }
+
+  &-totals {
+    font-size: 25px;
+    text-align: right;
+  }
+  &-total {
+    font-weight: bold;
+  }
+
+  /**
+   * footnote
+   */
+  &-footnote {
+    font-size: 15px;
+    text-align: right;
+  }
+  /**
+   * actions
+   */
+  &-actions {
+    text-align: right;
+    padding-top: 15px;
+  }
+}

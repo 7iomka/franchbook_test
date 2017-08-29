@@ -1,0 +1,27 @@
+.advantage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  // background-size: contain;
+  height: 200px;
+
+  @for $i from 1 through 5 {
+
+      $bgImage: url('../images/sections/services/a-#{$i}.png');
+
+      &--#{$i} {
+        background-image: $bgImage;
+      }
+  }
+
+  &__label {
+    font-size: 2em;
+    line-height: (2.2/2);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+}

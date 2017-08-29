@@ -1,0 +1,22 @@
+context:
+  id: fitingi
+  title: Фитинги из ПП для внутренней канализации
+  productPhoto:
+    mods: [with-link]
+    src: /assets/images/catalog/3/product-1/product-photo1.png
+    link: /assets/images/catalog/3/product-1/product-photo1.png
+  productSchemePhoto:
+    mods: [with-link]
+    src: /assets/images/catalog/3/product-1/product-scheme-photo1.png
+    link: /assets/images/catalog/3/product-1/product-scheme-photo1.png
+  textDescription: "Полипропиленовая заглушка <strong>«Политэк»</strong> — соединительный фитинг для пластиковых труб. С этой заглушкой вы сможете закрыть и загерметизировать трубы на любой срок. Изделие используется в работе с водопроводом или системой отопления."
+  advantages:
+  - Экологичная
+  - Прочная
+  - Устойчивая к перепадам температур и нагреву;
+  - Влагоустойчивая;
+  - Стойкая к воздействию коррозии и агрессивных химических соединений.
+  addToCart:
+    image: /assets/images/icons/addToCart.png
+    label: Добавить в корзину
+    mods: [with-image, secondary]

@@ -1,0 +1,81 @@
+/*----------------------------
+    The file upload form
+-----------------------------*/
+
+
+#upload {
+    margin: 40px auto 0;
+}
+
+#drop {
+    text-align: center;
+}
+
+#drop button {
+    width: 100%;
+}
+
+
+#drop input {
+    display:none;
+}
+
+
+#upload ul {
+    margin: 25px 0;
+    background: rgba(219, 224, 236, 0.57);
+    display: block;
+    width: 100%;
+}
+
+#upload ul li {
+    width: 100%;
+    position: relative;
+    padding: 10px;
+}
+
+#upload ul li>div {
+    display: inline-block!important;
+    margin-right: 10px;
+}
+
+#upload ul li canvas {
+    position: relative;
+}
+
+#upload ul li p {
+    white-space: nowrap;
+    color: #3d3d48;
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+#upload ul li i {
+    font-weight: 400;
+    font-style: normal;
+    color: #4f1622;
+    display: block;
+}
+
+
+#upload ul li span {
+    width: 15px;
+    height: 12px;
+    // background: image('icons.png') no-repeat;
+    position: absolute;
+    top: 24px;
+    right: 33px;
+    cursor:pointer;
+    display: none;
+}
+
+#upload ul li.working span {
+    height: 16px;
+    background-position: 0 -12px;
+}
+
+#upload ul li.error p {
+    color:red;
+}

@@ -1,0 +1,30 @@
+<!--PRODUCTION 24-->
+<div style="display: none;" class="modal {{ customClassList }}" id="{{ id }}">
+  {% if title %}
+      <h2 class="modal__title">{{ title }}</h2>
+  {% endif %}
+	<div class="modal__wrapper">
+    {% block content %}
+    {% endblock %}
+  </div>
+</div>
+{# <form class="form">
+  <label class="sr-only" for="inlineFormInputGroup">Email</label>
+  <div class="input-group mb-2">
+    <div class="input-group-addon"><span class="input-icon i-icon-email"></span></div>
+    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Email">
+  </div>
+  <label class="sr-only" for="inlineFormInputGroup">Пароль</label>
+  <div class="input-group mb-2">
+    <div class="input-group-addon"><span class="input-icon i-icon-password"></span></div>
+    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Пароль">
+  </div>
+  <div class="pass-recover mt-2">
+    <a class="modal-link" data-modal-target="#production24" href="javascript:;">Восстановить пароль</a>
+  </div>
+  {% render "@button--primary", {label: 'Войти', customClassList: 'modal__submit'}, true %}
+  <div class="mt-4">
+    Если у вас нет аккаунта
+  </div>
+  <a class="c-button c-button--primary modal__button mt-2 fancybox-link" data-fancybox-target="#register-modal" href="javascript:;">Регистрация</a>
+</form> #}

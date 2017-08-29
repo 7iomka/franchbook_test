@@ -1,0 +1,36 @@
+// ========================================================
+//
+// Fractal theme styles
+//
+// ========================================================
+
+// Functions
+@import 'functions/**/*.scss';
+
+// Config
+@import 'config/**/*.scss';
+
+// Documentation styles
+@import 'docs/**/*.scss';
+
+// Theme overrides
+a {
+  color: $color-link;
+
+  &:hover {
+    color: $color-link--hover;
+  }
+
+  &:active {
+    color: $color-link--active;
+  }
+}
+
+.Pen-previewLink svg {
+  fill: currentColor;
+}
+
+.Header {
+  background-color: palette(primary, dark);
+  color: palette(primary, light);
+}

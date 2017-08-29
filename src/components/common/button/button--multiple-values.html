@@ -1,0 +1,6 @@
+<button class="c-button c-button--multiple-values
+{%- for mod in mods %} c-button--{{ mod }}{% endfor %} {{ customClassList }}"{{ " type='submit'" if submit }}{{ " disabled" if disabled }}>
+  {% for value in values %}
+    <span class="c-button__value {{ 'c-button__value--visible' if value.visible else 'c-button__value--hidden' }} {{ value.customClassList }}">{{ value.value }}</span>
+  {% endfor %}
+</button>

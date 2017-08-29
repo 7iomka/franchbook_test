@@ -1,0 +1,21 @@
+<figure class="img-responsive{% for mod in mods %} img-responsive--{{ mod }}{% endfor %} {{ customClassList }}">
+  {% if link %}
+  <a href="{{ link | path }}" class="img-responsive__link {{ customClassList__link }}" {% for attr, value in attrs %}
+    {{ attr + '="' + value + '"' }}
+  {% endfor %}
+  >
+    {% if external %}
+      <img src="{{ src }}" alt="{{ alt }}" class="img-responsive__item">
+    {% else %}
+      <img src="{{ src | path }}" alt="{{ alt }}" class="img-responsive__item">
+    {% endif %}
+
+  </a>
+  {% else %}
+    {% if external %}
+      <img src="{{ src }}" alt="{{ alt }}" class="img-responsive__item">
+    {% else %}
+      <img src="{{ src | path }}" alt="{{ alt }}" class="img-responsive__item">
+    {% endif %}
+  {% endif %}
+</figure>

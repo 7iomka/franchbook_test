@@ -1,0 +1,10 @@
+{% extends "@page" %}
+{% block main %}
+  {%- for section in sections -%}
+    {% if section.section %}
+      {% render "@" + section.section, section.config %}
+    {% else %}
+      {% render "@" + section.component, section.config %}
+    {% endif %}
+  {%- endfor -%}
+{% endblock %}
