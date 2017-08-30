@@ -1,5 +1,6 @@
 <div class="logo">
   <a class="logo__link" href="/">
+      {{ set type = type if (type != 'normal') else "" }}
     <img src="{{ '/assets/images/' + type + '.png' | path }}" alt="">
   </a>
 </div>
