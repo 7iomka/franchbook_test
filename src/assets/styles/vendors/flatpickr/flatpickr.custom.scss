@@ -1,7 +1,9 @@
 .flatpickr-wrapper {
   width: 100%;
 }
-.form-control:disabled, .form-control[readonly] {
+
+.form-control:disabled,
+.form-control[readonly] {
   &.flatpickr {
     background-color: transparent;
   }

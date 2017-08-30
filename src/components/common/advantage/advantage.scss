@@ -8,20 +8,18 @@
   height: 200px;
 
   @for $i from 1 through 5 {
+    $bgImage: url('../images/sections/services/a-#{$i}.png');
 
-      $bgImage: url('../images/sections/services/a-#{$i}.png');
-
-      &--#{$i} {
-        background-image: $bgImage;
-      }
+    &--#{$i} {
+      background-image: $bgImage;
+    }
   }
 
   &__label {
     font-size: 2em;
-    line-height: (2.2/2);
+    line-height: (2.2 / 2);
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
   }
-
 }

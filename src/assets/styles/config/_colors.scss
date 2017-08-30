@@ -1,0 +1,109 @@
+$scotch-color-key: 'base' !default;
+$project-colors: (
+  'primary': (
+    'lightest': #ff9524,
+    'lighter': #ff9524,
+    'light': #ff9524,
+    'base': #ff8400,
+    'dark': #ff8400,
+  ),
+  'secondary': (
+    'light': #fafafa,
+    'base': #f2f2f2,
+    'dark': #e4e4e4,
+    'darker': #b8b8b8,
+    'darkest': #646464,
+  ),
+  'dark': (
+    'base': #000000,
+  ),
+);
+$project-colors-opacity: (
+  'light': 0.8,
+  'dark': 0.4,
+);
+
+@function palette(
+  $name: 'primary',
+  $variant: $scotch-color-key,
+  $opacity: 1
+) {
+  $color: null;
+
+  // Get the color spectrum
+  $color-spectrum: map-get($project-colors, $name);
+
+  // Get the color variant
+  @if $color-spectrum {
+    $color: map-get($color-spectrum, $variant);
+  }
+
+  // Get the alpha setting
+  $alpha: if(type-of($opacity) == 'number', $opacity, map-get($project-colors-opacity, $opacity));
+
+  // Set the alpha of the color
+  @if $alpha {
+    $color: rgba($color, $alpha);
+  }
+
+  @return $color;
+}
+
+/**
+  Color variations
+ */
+
+// PRIMARY
+$color--primary: palette(primary);
+$color--primary_light: palette(primary, light);
+$color--primary_dark: palette(primary, dark);
+
+// SECONDARY
+$color--secondary: palette(secondary);
+$color--secondary_light: palette(secondary, light);
+$color--secondary_dark: palette(secondary, dark);
+
+// BLACK
+$color--dark: palette(dark);
+
+/**
+  USAGE of color variations variables in SITE ELEMENTS
+ */
+$color-link: $color--dark;
+$color-link--hover: $color--dark;
+$color-link--active: $color--dark;
+
+// Text color
+$color-text: $color--dark;
+
+
+
+
+//
+//$color-ui-link: palette(primary);
+//$color-ui-link--hover: palette(primary, light);
+//$color-ui-link--active: palette(primary, dark);
+
+//$color-focus: palette(primary, light);
+
+
+// Example usage
+//.button {
+//  background-color: palette('primary');
+//
+//  &:hover {
+//    background-color: palette('primary', 'light');
+//  }
+//
+//  &.secondary {
+//    background-color: palette('secondary');
+//
+//    &:hover {
+//      background-color: palette('secondary', 'dark');
+//    }
+//  }
+//
+//  &.transparent {
+//    background-color: palette('primary', $opacity: 'light');
+//  }
+//}

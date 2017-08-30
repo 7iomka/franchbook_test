@@ -16,6 +16,7 @@
 .order-data {
   display: block;
   text-align: center;
+
   &__id {
     $base: 3;
     background-color: #ffd200;
@@ -25,14 +26,14 @@
     font-weight: bold;
     padding: em-rel(2.8, $base) em-rel(0.6, $base);
     border: 6px solid #ffc600;
-    border: em-rel(0.6,$base) solid #ffc600;
+    border: em-rel(0.6, $base) solid #ffc600;
   }
 
   &__success-text {
     $base: 2;
     font-size: $base*1em;
     margin: em-rel(3, $base) auto;
-    max-width: 30em; 
+    max-width: 30em;
 
     &:last-child {
       margin-bottom: 0;
@@ -42,6 +43,6 @@
 
 // common
 .addToBookmark {
-    font-weight: bold;
-    text-decoration: underline;
+  font-weight: bold;
+  text-decoration: underline;
 }

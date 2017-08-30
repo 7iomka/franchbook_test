@@ -1,0 +1,28 @@
+.header-nav {
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    max-width: 53.6em;
+  }
+
+  &__anchor {
+    font-size: 1.4em;
+    font-weight: 700;
+    line-height: 5.14;
+
+    &--with-icon {
+      display: flex;
+      align-items: center;
+    }
+
+    &-icon {
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+    }
+
+  }
+
+
+}
+

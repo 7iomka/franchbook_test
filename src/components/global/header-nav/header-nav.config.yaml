@@ -1,0 +1,16 @@
+context:
+  lol: 1
+  nav:
+  - label: О компании
+    href: '#'
+  - label: Доставка
+    href: '#'
+  - label: Контакты
+    href: '#'
+  - label: Спецпредложения
+    href: '#'
+    icon:
+      classes: 'u-icon u-icon--badge header-nav__anchor-icon'
+      id: badge
+
+

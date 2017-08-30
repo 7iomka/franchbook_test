@@ -216,7 +216,7 @@ function createComponent(args, done) {
       data: '',
     },
     {
-      extension: '.html',
+      extension: '.njk',
       data: '',
     },
     {

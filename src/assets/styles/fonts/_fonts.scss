@@ -11,12 +11,8 @@
  */
 @font-face {
   font-family: 'TT Prosto Sans';
-  src: font('ProstoSans-Light.eot');
-  src: font('ProstoSans-Light.eot?#iefix') format('embedded-opentype'),
-  font('ProstoSans-Light.woff2') format('woff2'),
-  font('ProstoSans-Light.woff') format('woff'),
-  font('ProstoSans-Light.ttf') format('truetype'),
-  font('ProstoSans-Light.svg#TTProstoSans-Light') format('svg');
+  src: font('ProstoSans/ProstoSans-Light.eot');
+  src: font('ProstoSans/ProstoSans-Light.eot?#iefix') format('embedded-opentype'), font('ProstoSans/ProstoSans-Light.woff2') format('woff2'), font('ProstoSans/ProstoSans-Light.woff') format('woff'), font('ProstoSans/ProstoSans-Light.ttf') format('truetype'), font('ProstoSans/ProstoSans-Light.svg#TTProstoSans-Light') format('svg');
   font-weight: 300;
   font-style: normal;
 }
@@ -25,12 +21,8 @@
  */
 @font-face {
   font-family: 'TT Prosto Sans';
-  src: font('ProstoSans.eot');
-  src: font('ProstoSans.eot?#iefix') format('embedded-opentype'),
-  font('ProstoSans.woff2') format('woff2'),
-  font('ProstoSans.woff') format('woff'),
-  font('ProstoSans.ttf') format('truetype'),
-  font('ProstoSans.svg#TTProstoSans') format('svg');
+  src: font('ProstoSans/ProstoSans.eot');
+  src: font('ProstoSans/ProstoSans.eot?#iefix') format('embedded-opentype'), font('ProstoSans/ProstoSans.woff2') format('woff2'), font('ProstoSans/ProstoSans.woff') format('woff'), font('ProstoSans/ProstoSans.ttf') format('truetype'), font('ProstoSans/ProstoSans.svg#TTProstoSans') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -39,12 +31,8 @@
  */
 @font-face {
   font-family: 'TT Prosto Sans';
-  src: font('ProstoSans-Bold.eot');
-  src: font('ProstoSans-Bold.eot?#iefix') format('embedded-opentype'),
-  font('ProstoSans-Bold.woff2') format('woff2'),
-  font('ProstoSans-Bold.woff') format('woff'),
-  font('ProstoSans-Bold.ttf') format('truetype'),
-  font('ProstoSans-Bold.svg#TTProstoSans-Bold') format('svg');
+  src: font('ProstoSans/ProstoSans-Bold.eot');
+  src: font('ProstoSans/ProstoSans-Bold.eot?#iefix') format('embedded-opentype'), font('ProstoSans/ProstoSans-Bold.woff2') format('woff2'), font('ProstoSans/ProstoSans-Bold.woff') format('woff'), font('ProstoSans/ProstoSans-Bold.ttf') format('truetype'), font('ProstoSans/ProstoSans-Bold.svg#TTProstoSans-Bold') format('svg');
   font-weight: bold;
   font-style: normal;
 }

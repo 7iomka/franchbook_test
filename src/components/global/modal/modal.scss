@@ -2,6 +2,7 @@
   margin: 0;
   overflow: hidden;
 }
+
 .fancybox-slide--complete .modal {
   opacity: 1;
   transform: translateY(0);
@@ -11,10 +12,9 @@
   padding: 0;
 
   /* Custom transition - fade from top*/
-		opacity: 0;
-    transform: translateY(-50px);
-    transition: all .3s;
-
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all .3s;
   box-shadow: 0 0 0 10px rgba(23, 22, 28, 0.09);
 
   // MODS
@@ -59,32 +59,34 @@
   }
 
   &__body {
-      background: white;
-      font-size: 1.8em;
-      line-height: 1.11;
-      padding: em-rel(2.1, 1.8) em-rel(3.9, 1.8);
-      border-radius: 0 0 5px 5px;
+    background: white;
+    font-size: 1.8em;
+    line-height: 1.11;
+    padding: em-rel(2.1, 1.8) em-rel(3.9, 1.8);
+    border-radius: 0 0 5px 5px;
   }
 
   &__title {
     display: inline-block;
     font-size: 3em;
     padding-bottom: em-rel(1.3, 3);
-    color: $base-color--secondary_dark;
+    color: $color--secondary_dark;
     font-weight: bold;
     line-height: 1;
     position: relative;
+
     @include media("<sm") {
       font-size: 2.85em;
-    };
+    }
+
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       right: 0;
       bottom: 0;
       height: 2px;
-      background-color: $base-color--primary;
+      background-color: $color--primary;
     }
   }
 
@@ -93,6 +95,4 @@
   //     top: 15px;
   //     right: 15px;
   // }
-
-
 }

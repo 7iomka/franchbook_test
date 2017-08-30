@@ -46,6 +46,7 @@ const wrap = require('gulp-wrap');
 const through = require('through2');
 const tap = require('gulp-tap');
 const foreach = require('gulp-foreach');
+// const stylefmt = require('gulp-stylefmt');
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
@@ -202,7 +203,8 @@ function videos() {
 
 // Vectors
 function vectors() {
-  // var mergeAssortimentFilesToVectorsFolder = gulp.src(paths.src + '/assets/images/sections/assortiment/**/*.svg')
+  // var mergeAssortimentFilesToVectorsFolder =
+  // gulp.src(paths.src + '/assets/images/sections/assortiment/**/*.svg')
   //     .pipe(cache('vectors caching'))
   //     .pipe(flatten())
   //     .pipe(gulp.dest(paths.src + '/assets/vectors/'));
@@ -275,18 +277,18 @@ function prepareVectors() {
 
   // gulp.src('**/*.svg', {cwd: 'path/to/assets'})
   return gulp.src('**/*.svg', { cwd: `${paths.src}/assets/vectors` })
-  	.pipe(svgSprite(config))
-  	.pipe(gulp.dest(`${paths.src}/assets/vectors/`));
+    .pipe(svgSprite(config))
+    .pipe(gulp.dest(`${paths.src}/assets/vectors/`));
 }
 
-// function cleanOldGereratedSprite() {
-//   return del(paths.src + '/assets/vectors/sprite');
-// };
-//
-// gulp.task('prepareVectors', gulp.series(cleanOldGereratedSprite,prepareVectors));
-// gulp.task('vectors', gulp.series('prepareVectors', vectors));
+function cleanOldGereratedSprite() {
+  return del(`${paths.src}/assets/vectors/sprite`);
+}
 
-gulp.task('vectors', vectors);
+gulp.task('prepareVectors', gulp.series(cleanOldGereratedSprite, prepareVectors));
+gulp.task('vectors', gulp.series('prepareVectors', vectors));
+
+// gulp.task('vectors', vectors);
 
 
 // Linting
@@ -299,6 +301,12 @@ function lintstyles() {
       }],
     }));
 }
+
+// gulp.task('stylefmt', function () {
+//   return gulp.src(`${paths.src}/**/*.scss`)
+//     .pipe(stylefmt())
+//     .pipe(gulp.dest(paths.src));
+// });
 
 // Styles
 function styles() {

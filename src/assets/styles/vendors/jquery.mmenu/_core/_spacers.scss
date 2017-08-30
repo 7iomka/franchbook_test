@@ -1,16 +1,13 @@
 // Spacers
 
-.mm-listview .mm-spacer
-{
-	padding-top: $mm_btnSize;
-	
-	> .mm-next
-	{
-		top: $mm_btnSize;
-	}
+.mm-listview .mm-spacer {
+  padding-top: $mm_btnSize;
 
-	&.mm-divider
-	{
-		padding-top: $mm_dividerHeight;
-	}
+  > .mm-next {
+    top: $mm_btnSize;
+  }
+
+  &.mm-divider {
+    padding-top: $mm_dividerHeight;
+  }
 }

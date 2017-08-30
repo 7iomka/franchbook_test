@@ -31,7 +31,6 @@
     height: $form-group__control-height;
     padding: 0;
     border-radius: 0;
-
   }
   /** addon **/
   .form-group-addon {
@@ -39,22 +38,22 @@
      * text addon
      */
     &--text {
-        outline: none;
-        text-align: center;
-        vertical-align: top;
-        border: 1px solid $form-group__addon_border-color;
-        height: $form-group__addon_height;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        background-color: $form-group__addon_bg-color;
-        color: $form-group__addon_text-color;
-        cursor: pointer;
-        display: inline-block;
-        line-height: $form-group__addon_height;
-        padding: 0 5px;
-        width: $form-group__addon_width;
+      outline: none;
+      text-align: center;
+      vertical-align: top;
+      border: 1px solid $form-group__addon_border-color;
+      height: $form-group__addon_height;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      background-color: $form-group__addon_bg-color;
+      color: $form-group__addon_text-color;
+      cursor: pointer;
+      display: inline-block;
+      line-height: $form-group__addon_height;
+      padding: 0 5px;
+      width: $form-group__addon_width;
     }
   }
 }

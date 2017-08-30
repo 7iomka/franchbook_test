@@ -1,0 +1,10 @@
+<form action="{{ action }}" method="{{ method }}" class="search-form">
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Search for...">
+    <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button">
+          {% render "@svg-use", searchButton %}
+        </button>
+      </span>
+  </div>
+</form>

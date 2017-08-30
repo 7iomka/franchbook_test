@@ -25,7 +25,7 @@ textarea {
 // 2. Show the overflow in Edge, Firefox, and IE.
 // 3. Ensure inputs inherit text colour of parent element
 button,
-input, // 1
+input,
 select { // 2
   overflow: visible;
   color: inherit; // 3

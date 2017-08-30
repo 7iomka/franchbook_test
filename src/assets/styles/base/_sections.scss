@@ -20,7 +20,7 @@ html {
 }
 
 @media print {
-  @page {
+  @page  {
     margin: 2cm;
   }
 
@@ -41,19 +41,20 @@ body {
   -webkit-font-smoothing: antialiased;
   line-height: 1.5;
   color: $color-text;
-
   $base-font-size: $size-xs;
   font-size: $base-font-size;
+
   @include media(">=sm") {
-      font-size: $size-sm;
-  };
+    font-size: $size-sm;
+  }
+
   @include media(">=md") {
     font-size: $size-md;
-  };
+  }
+
   @include media(">=lg") {
     font-size: $size-lg;
-  };
-
+  }
 }
 
 // Add the correct display in IE 9-.
@@ -91,10 +92,11 @@ hr {
   overflow: visible; // 2
   border: 0;
 }
+
 .clearfix::after {
-    content: '';
-    display: table;
-    clear: both;
+  content: '';
+  display: table;
+  clear: both;
 }
 
 .site-wrapper {
