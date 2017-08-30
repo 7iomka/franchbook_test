@@ -374,7 +374,7 @@ gulp.task('styles', gulp.series(styles, separateStyles, separateVendors));
 
 // injectFiles
 function injectPreview() {
-  const target = gulp.src(`${paths.src}/components/partials/_preview.html`);
+  const target = gulp.src(`${paths.src}/components/partials/_preview.njk`);
   const inlinesourceOptions = {
     compress: true,
     rootpath: paths.dest,
@@ -417,7 +417,7 @@ function injectPreview() {
 
 // Accessibility audit
 function audit() {
-  return gulp.src(`${paths.build}/components/preview/**/*.html`)
+  return gulp.src(`${paths.build}/components/preview/**/*.njk`)
     .pipe(a11y())
     .pipe(a11y.reporter());
 }
@@ -540,7 +540,7 @@ function watch(done) {
   });
 
   gulp.watch([
-    `${paths.src}/components/partials/_preview.html`,
+    `${paths.src}/components/partials/_preview.njk`,
   ], gulp.series(injectPreview)).on('error', (error) => {
     // silently catch 'ENOENT' error typically caused by renaming watched folders
     if (error.code === 'ENOENT') {
@@ -554,7 +554,7 @@ function watch(done) {
     }
   });
   gulp.watch([
-    `${paths.src}/*.{txt,json,php,html}`,
+    `${paths.src}/*.{txt,json,php,html,.njk}`,
     `${paths.src}/inc`,
     `${paths.src}/lib`,
     `${paths.src}/uploads`,
