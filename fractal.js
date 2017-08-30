@@ -100,7 +100,7 @@ fractal.set('project.title', 'build_light_easy');
 fractal.components.engine(nunjucks);
 fractal.components.set('default.preview', `${paths.static}/_preview.html`);
 fractal.components.set('default.status', 'prototype');
-fractal.components.set('ext', '.html');
+fractal.components.set('ext', '.njk');
 fractal.components.set('path', `${paths.src}/components`);
 
 // Docs config
