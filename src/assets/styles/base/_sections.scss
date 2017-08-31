@@ -103,3 +103,10 @@ hr {
   max-width: 1920px;
   margin: auto;
 }
+
+/**
+  inherit properties from use styles in svg sprite
+ */
+.uses svg path {
+  fill: inherit;
+}

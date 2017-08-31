@@ -1,23 +1,30 @@
 // Buttons background
-$button-background--primary: palette(primary);
-$button-background--primary_hover: palette(primary, dark);
-$button-background--primary_active: palette(primary, light);
-$button-background--secondary: palette(secondary);
-$button-background--secondary_hover: palette(secondary, dark);
-$button-background--secondary_active: palette(secondary, light);
-$button-background--dark: palette(secondary, dark);
-$button-background--dark_hover: palette(secondary);
-$button-background--dark_active: #000;
+$button-background--primary: $color--primary;
+$button-background--primary_hover: $color--primary_dark;
+$button-background--primary_active: $color--primary_light;
+
+$button-background--secondary: $color--secondary;
+$button-background--secondary_hover: $color--secondary_dark;
+$button-background--secondary_active: $color--secondary_light;
+
+$button-background--dark: $color--dark;
+$button-background--dark_hover: $color--dark;
+$button-background--dark_active: $color--dark;
+
+$button-background--disabled: $color--secondary_dark;
+
+// Buttons colors (if different from the inherited)
+$button-color--primary: #fff;
+$button-color--secondary: #000;
 
 .c-button {
-  font-size: 1rem;
+  font-size: 1.4rem;
+  border-radius: 0.4rem;
+  padding: 1.3rem 1.8rem;
   line-height: 1;
-  font-weight: 500;
-  display: inline-block;
+  font-weight: 400;
+  display: inline-flex;
   text-align: center;
-  color: white;
-  border-radius: 15px;
-  vertical-align: middle;
   user-select: none;
   outline: none;
   text-transform: uppercase;
@@ -28,95 +35,59 @@ $button-background--dark_active: #000;
   }
 }
 
-.c-button--more {
-  width: 100%;
-}
 /** by state **/
 .c-button[disabled] {
-  background: #c4c4c4;
-  color: black;
+  background: $button-background--disabled;
 }
+
 /** by color **/
+
 // PRIMARY
 .c-button--primary {
   background-color: $button-background--primary;
+  color: $button-color--primary;
 
   &:hover {
     background-color: $button-background--primary_hover;
   }
 }
+
 // SECONDARY
 .c-button--secondary {
   background-color: $button-background--secondary;
+  color: $button-color--secondary;
 
   &:hover {
     background-color: $button-background--secondary_hover;
-    color: white;
   }
 }
+
 // DARK
 .c-button--dark {
   background-color: $button-background--dark;
-  color: white;
+  color: #fff;
 
   &:hover {
     background-color: $button-background--dark_hover;
   }
 }
-//// NEUTRAL LIGHTEST (WHITE)
-//.c-button--neutral {
-//  background-color: $color-neutral--lightest;
-//
-//  &:hover {
-//    background-color: $color-neutral--lightest;
-//  }
-//}
-
-/** by size **/
-// default style for buttons
-.c-button {
-  $button-fsz: 1.5em;
-  font-size: $button-fsz;
-  // font-size: em($button-fsz, $rem-baseline);
-  // @include em(( padding: 18px 28px, ), $button-fsz);
-  border-radius: 28px;
-  padding: 1.8em;
-  line-height: 1;
-  border-radius: 4em; // 4 * 1em
-  @include media(">=414px") {
-    width: 23.3em;
-  }
-}
-
-
-// FIXED SIZE
-
-.c-button--fixed-width {
-  //=> medim = normal size dimmensions
-  &_medium {
-    width: 240px;
-    height: 55px;
-    line-height: 55px;
-  }
-}
-
 
 /** with image-icon **/
-.c-button {
-  &.c-button--with-image {
-    min-width: 200px;
-
-    .c-button__image {
-      margin-right: 10px;
-    }
-  }
-}
-/** BY tipe **/
-.c-button--outlined {
-  border-radius: 15px;
-  box-shadow: 0 0 0 2px #312d3b inset;
-}
-
+//.c-button {
+//  &.c-button--with-image {
+//    min-width: 200px;
+//
+//    .c-button__image {
+//      margin-right: 10px;
+//    }
+//  }
+//}
+///** BY tipe **/
+//.c-button--outlined {
+//  border-radius: 15px;
+//  box-shadow: 0 0 0 2px #312d3b inset;
+//}
+//
 
 
 /** BUTTON WITH MULTIPLE VALUES **/

@@ -1,5 +1,4 @@
 context:
-  lol: 1
   nav:
   - label: О компании
     href: '#'

@@ -86,6 +86,12 @@ const nunjucks = require('@frctl/nunjucks')({
     pathlink(str) {
       return `/components/preview/${str.toString()}`;
     },
+    hashString(str) {
+      //http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript
+      return str + '__' + (
+        Math.random().toString(36).substring(2, 6) + Math.random().toString(36).substring(2, 6)
+      );
+    },
   },
   paths: [
     `${paths.static}/assets/vectors`,

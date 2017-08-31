@@ -1,10 +1,18 @@
-<form action="{{ action }}" method="{{ method }}" class="search-form">
+<form action="{{ action }}" method="{{ method }}" class="search-form {{ 'search-form--fullwidth'
+if fullwidth }}">
   <div class="input-group">
-    <input type="text" class="form-control" placeholder="Search for...">
+    {% set inputId = ('search-form__control' | hashString) %}
+    <input type="text" id="{{ inputId }}" class="form-control" required >
+    <label class="form-label form-label--inside" for="{{ inputId }}">{{ label }}</label>
     <span class="input-group-btn">
-        <button class="btn btn-secondary" type="button">
-          {% render "@svg-use", searchButton %}
-        </button>
-      </span>
+      <button class="btn btn-secondary" type="button">
+        {% render "@svg-use", searchButton %}
+      </button>
+    </span>
+  </div>
+  <div class="search-form__results">
+    <div class="message message--empty">
+      <div class="message__header">{{ defaultEmptyMessage }}</div>
+    </div>
   </div>
 </form>

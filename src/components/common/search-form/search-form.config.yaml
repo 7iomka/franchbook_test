@@ -1,3 +1,7 @@
 context:
+  label: Поиск товаров
+  defaultEmptyMessage: Ничего не найдено
+  fullwidth: true
   searchButton:
     id: search
+    classes: 'ui-icon ui-icon--search search-form__icon'

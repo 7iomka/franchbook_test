@@ -6,16 +6,33 @@
   &-label {
     font-size: 2em;
     line-height: 1;
-    margin-bottom: em-rel(0.5, 2);
     display: block;
+    margin-bottom: em-rel(0.5, 2);
+
+    &--inside {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 1rem;
+      margin-bottom: 0;
+      cursor: text;
+      font-size: 1.4rem;
+      font-weight: 400;
+      transition: .2s;
+      z-index: 3;
+    }
   }
 
   &-control {
-    font-size: 1.9em;
-    line-height: 1;
-    padding: em-rel(1.6, 1.9) em-rel(1.7, 1.9);
-    border-radius: em-rel(0.3, 1.9);
-    border-color: #c4c4c4;
+    height: 4rem;
+    box-shadow: inset 0.1rem 0.2rem 0.2rem rgba(0, 0, 0, 0.15);
+    border-radius: 0.6rem;
+    background-color: $color--secondary;
+    //font-size: 1.9em;
+    //line-height: 1;
+    //padding: em-rel(1.6, 1.9) em-rel(1.7, 1.9);
+    //border-radius: em-rel(0.3, 1.9);
+    //border-color: #c4c4c4;
 
     &:focus {
       border-color: $color--primary;
@@ -62,4 +79,142 @@
       display: block;
     }
   }
+}
+
+
+/**
+  Search form
+ */
+.search-form {
+  position: relative;
+
+
+
+  &__icon {
+    width: 17px;
+    height: 17px;
+  }
+
+  &__results {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform-origin: center top;
+    background: #fff;
+    margin-top: .5em;
+    width: 25em;
+    border-radius: .28571429rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+    z-index: 998;
+  }
+
+  .input-group {
+    display: inline-flex;
+    position: relative;
+    width: auto;
+  }
+
+  &--fullwidth .input-group{
+    width: 100%;
+  }
+
+
+  // override bootstrap styles
+  $searchForm__controlPadding: 1.4rem 2.1rem 1.3rem;
+  $searchForm__labelPadding: $searchForm__controlPadding;
+  $searchForm__button-width: 1.7rem;
+  $searchForm__button-height: 1.7rem;
+
+  .input-group .form-control {
+    margin: 0;
+    max-width: 100%;
+    font-size: 1.4rem;
+    padding: $searchForm__controlPadding;
+    flex: 1 0 auto;
+    outline: 0;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    box-shadow: inset 0.1rem 0.2rem 0.2rem rgba(0, 0, 0, 0.15);
+    border-radius: 0.6rem;
+    border: none;
+    &:focus {
+      box-shadow: inset 0.1rem 0.2rem 0.5rem $color--secondary;
+      background-color: $color--secondary_light;
+    }
+  }
+
+  .form-label {
+    padding: $searchForm__labelPadding;
+  }
+  .form-control:focus + .form-label {
+    opacity: 0.6;
+  }
+  .form-control:valid + .form-label {
+    transform: translateX(1rem);
+    opacity: 0;
+  }
+
+  .input-group-btn {
+    position: absolute;
+    line-height: 1;
+    text-align: center;
+    top: 1.2rem;
+    right: 1.6rem;
+    margin: 0;
+    width: $searchForm__button-width;
+    height: $searchForm__button-height;
+    pointer-events: none;
+    transition: opacity .3s ease;
+    z-index: 3;
+  }
+
+  .form-control:focus ~ .input-group-btn {
+    opacity: 0.5;
+  }
+  .form-control:valid:focus ~ .input-group-btn {
+    opacity: 1;
+    // ui loader demo
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      margin: -($searchForm__button-height/2) 0 0 -($searchForm__button-height/2);
+      animation: button-spin .6s linear;
+      animation-iteration-count: infinite;
+      border-radius: 500rem;
+      border-color: #000 transparent transparent;
+      border-style: solid;
+      border-width: 0.2rem;
+    }
+
+    button {
+      display: none;
+    }
+
+    @keyframes button-spin {
+      from {
+        transform: rotate(0)
+      }
+      to {
+        transform: rotate(360deg)
+      }
+    }
+  }
+
+  /**
+    Results empty message
+   */
+  .message {
+    padding: 1rem 2.1rem;
+    &__header {
+      font-size: 2em;
+      font-weight: 700;
+      color: rgba(0,0,0,.87);
+    }
+  }
+
+
 }
