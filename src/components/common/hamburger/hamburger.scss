@@ -1,0 +1,113 @@
+/**
+  $container-selector -
+    this is helper class which need to add to
+    element which contains hamburger component
+ */
+@mixin hamburger(
+  $color: #ab7a2a,
+  $activeColor: #ab740d,
+  $width: 1.5rem,
+  $height: 1.4rem,
+  $lineHeight: 0.2rem,
+  $speed: 750ms,
+  $effect: false,
+  $container-selector: '.hamburger-container',
+  $container-expanded-selector: '.hamburger-container--active'
+) {
+
+  /**
+    Calculations
+   */
+
+  // offset between lines
+  $offset: ($height - ($lineHeight * 3)) / 2;
+
+  // when we rotate one of hamburger line by 45 deg,
+  // we need to calculate translateY value
+  $translateYValue: $height / 2 - $lineHeight / 2;
+
+  /**
+    Normal state
+   */
+  .hamburger {
+    position: relative;
+    width: $width;
+    height: $height;
+    transition: transform $speed ease-in-out;
+    will-change: transform;
+
+    &:before,
+    &:after,
+    &__inner {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: $lineHeight;
+      background: $color;
+      transition: all $speed ease-in-out;
+      transform-origin: 50% 50%;
+      will-change: transform;
+    }
+
+    &:before {
+      top: 0;
+    }
+
+    &__inner {
+      top: $lineHeight + $offset;
+    }
+
+    &:after {
+      top: ($lineHeight + $offset) * 2;
+    }
+
+  }
+
+
+  /**
+    Expanded (active) state
+   */
+  #{$container-expanded-selector} {
+
+    .hamburger {
+
+      @if($effect == 'rotate'){
+        // rotation inverse effect
+        transform: rotateY(-180deg);
+      }
+
+      &:before,
+      &:after,
+      &__inner {
+        background: $activeColor;
+      }
+
+      &:before {
+        transform: translateY($translateYValue) rotateZ(-45deg);
+      }
+
+      &__inner {
+        transform: rotateY(-90deg);
+        transition: transform $speed / 2, background-color $speed ease-in-out;
+      }
+
+      &:after {
+        transform: translateY(-$translateYValue) rotateZ(45deg);
+      }
+    }
+  }
+
+
+}
+
+
+/**
+  Call hamburger
+ */
+@include hamburger(
+  #fff,
+  #fff,
+  $speed: 250ms,
+  $effect: 'rotate'
+);

@@ -1,4 +1,4 @@
-.header-nav {
+.nav {
   &__menu {
     display: flex;
     justify-content: space-between;
@@ -9,6 +9,9 @@
     font-size: 1.4em;
     font-weight: 700;
     line-height: 5.14;
+    &:hover {
+      color: $color--primary;
+    }
 
     &--with-icon {
       display: flex;

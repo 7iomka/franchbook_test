@@ -1,5 +1,5 @@
 <form action="{{ action }}" method="{{ method }}" class="search-form {{ 'search-form--fullwidth'
-if fullwidth }}">
+if fullwidth }} {{ classes }}">
   <div class="input-group">
     {% set inputId = ('search-form__control' | hashString) %}
     <input type="text" id="{{ inputId }}" class="form-control" required >

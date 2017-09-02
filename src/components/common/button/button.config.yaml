@@ -41,3 +41,11 @@ variants:
     label: Anchor(link) with background primary
     mods: [primary]
     href: '#!'
+# primary with component
+- name: primary_with-component
+  context:
+    label: with background primary and component inside
+    mods: [primary]
+    classes: 'hamburger-container'
+    component:
+      name: 'hamburger'

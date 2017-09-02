@@ -92,6 +92,9 @@ const nunjucks = require('@frctl/nunjucks')({
         Math.random().toString(36).substring(2, 6) + Math.random().toString(36).substring(2, 6)
       );
     },
+    formatPhone(str) {
+      return str.match(/\d+/g).join('');
+    },
   },
   paths: [
     `${paths.static}/assets/vectors`,

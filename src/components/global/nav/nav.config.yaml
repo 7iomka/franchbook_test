@@ -1,5 +1,5 @@
 context:
-  nav:
+  items:
   - label: О компании
     href: '#'
   - label: Доставка
@@ -9,7 +9,5 @@ context:
   - label: Спецпредложения
     href: '#'
     icon:
-      classes: 'u-icon u-icon--badge header-nav__anchor-icon'
+      classes: 'u-icon u-icon--badge nav__anchor-icon'
       id: badge
-
-

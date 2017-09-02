@@ -1,0 +1,8 @@
+default: clean
+variants:
+- name: clean
+  context:
+    container: false
+- name: with-container
+  context:
+    container: true

@@ -1,0 +1,26 @@
+@function b() {
+  $selector: str-slice(inspect(&), 2, -2);
+  @each $type in '__', '--' {
+    @if str-index($selector, $type) {
+      $selector: str-slice($selector, 0, str-index($selector, $type) - 1);
+    }
+  }
+  @return $selector;
+}
+
+/**
+  Example of usage
+ */
+/**
+  .media {
+    border: 1px solid;
+    &__content {
+      font-size: 10px;
+    }
+    &--large {
+      #{b()}__content {
+        font-size: 20px;
+      }
+    }
+  }
+ */

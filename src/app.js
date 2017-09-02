@@ -35,8 +35,10 @@ import deferImages from 'utils/defer-images.js';
 // import './components/common/base-slider/base-slider.js';
 
 import './components/common/button/button.js';
+import hamburgerActions from 'components/common/hamburger/hamburger';
 // init modal-links && fancybox set-up
 import modalActions from './components/global/modal/modal.js';
+
 // yutube preload
 // import videoReview from './components/common/video-review/video-review.js';
 // init scroll-links to target
@@ -89,6 +91,7 @@ domready(() => {
     // mapActions: mapActions.init(),
     modalActions: modalActions.init(),
     siteModals: siteModals.init(),
+    hamburgerActions: hamburgerActions.init(),
     // offerActions: offerActions.init(),
   };
 

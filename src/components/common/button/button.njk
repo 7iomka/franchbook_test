@@ -1,20 +1,40 @@
 {%- if href -%}
-<a class="c-button{% for mod in mods %} c-button--{{ mod }}{% endfor %} {{ customClassList }}" href="{{ href | path }}">
+<a class="c-button{% for mod in mods %} c-button--{{ mod }}{% endfor %} {{ classes }}" href="{{
+href |
+path }}">
   {% if image %}
     <img class="c-button__image" src="{{ image | path}}" />
   {% endif %}
   {% if icon %}
     <i class="c-button__icon {{ icon.iconClass }}">&nbsp;</i>
   {% endif %}
+  {% if svgIcon %}
+    <div class="c-button__svgIcon">{% render "@svg-use", svgIcon, true %}</div>
+  {% endif %}
+  {% if component %}
+    <div class="c-button__component">
+      {% render '@'+component.name, component.config %}
+    </div>
+  {% endif %}
   <span class="c-button__label">{{ label }}</span></a>
-
+  
 {%- else -%}
-<button class="c-button{% for mod in mods %} c-button--{{ mod }}{% endfor %} {{ customClassList }}"{{ " type=\"submit\"" if submit }}{{ " disabled" if disabled }} {% for attr, value in attrs %} {{ attr + '="' + value + '"' }}{% endfor %}>
+
+<button class="c-button{% for mod in mods %} c-button--{{ mod }}{% endfor %} {{ classes }}"{{ "
+type=\"submit\"" if submit }}{{ " disabled" if disabled }} {% for attr, value in attrs %} {{ attr + '="' + value + '"' }}{% endfor %}>
   {% if image %}
     <img class="c-button__image" src="{{ image | path}}" />
   {% endif %}
   {% if icon %}
     <i class="c-button__icon {{ icon.iconClass }}">&nbsp;</i>
   {%- endif -%}
-  {{ label }}</button>
+  {% if svgIcon %}
+    <div class="c-button__svgIcon">{% render "@svg-use", svgIcon, true %}</div>
+  {% endif %}
+  {% if component %}
+    <div class="c-button__component">
+      {% render '@'+component.name, component.config %}
+    </div>
+  {% endif %}
+  <span class="c-button__label">{{ label }}</span></button>
 {%- endif -%}

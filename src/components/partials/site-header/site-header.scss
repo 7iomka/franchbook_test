@@ -1,4 +1,73 @@
-/** GENERAL MENU **/
+
 .header {
-  padding: 19px 0 20px;
+  padding: 1.9rem 0 2rem;
+
+  /**
+    Catalog button
+ */
+  &__catalog-button {
+    margin-top: 2.9rem;
+  }
+
+  /**
+    Contacts
+   */
+  &__schedule {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1;
+    text-align: right;
+  }
+
+  &__phones {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+  }
+
+  &__phone-item {
+    &:not(:last-child){
+      margin-right: 2.2rem;
+    }
+  }
+
+  .phone {
+    font-size: 1.4rem;
+    line-height: 1.57;
+  }
+
+  /**
+    Actions
+   */
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2.3rem;
+  }
+
+  &__action {
+    &:not(:last-child){
+      margin-right: 2rem;
+    }
+  }
+}
+
+
+/**
+  Action block
+ */
+
+.action {
+  align-items: baseline;
+  // define size of variative action icon
+  &__icon {
+    #{b()}--login & {
+      width: 1.3rem;
+      height: 1.3rem;
+    }
+    #{b()}--shopping-cart & {
+      width: 1.6rem;
+      height: 1.4rem;
+    }
+  }
 }

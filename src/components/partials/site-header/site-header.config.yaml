@@ -1,35 +1,48 @@
 context:
-  menuPages:
-  - title: Услуги
-    url: '#services'
-  - title: Стекло в интерьере
-    url: '#our-works'
-  - title: Виды стекла
-    url: '#assortiment'
-  - title: Как мы работаем
-    url: '#how'
-  - title: Спецпредложение
-    url: '#offer'
-  - title: Оплата
-    url: '#pay'
-  - title: Контакты
-    url: '#contacts'
+  catalogButton:
+    label: Каталог
+    mods: [primary]
+    classes: 'catalog-button hamburger-container'
+    component:
+      name: 'hamburger'
+  nav:
+   classes: 'header__nav'
+   items:
+    - label: О компании
+      href: '#'
+    - label: Доставка
+      href: '#'
+    - label: Контакты
+      href: '#'
+    - label: Спецпредложения
+      href: '#'
+      icon:
+        classes: 'u-icon u-icon--badge nav__anchor-icon'
+        id: badge
 
-  mobileColumns:
-  - menuPages:
-    - title: Услуги
-      url: '#services'
-    - title: Стекло в интерьере
-      url: '#our-works'
-    - title: Виды стекла
-      url: '#assortiment'
-    - title: Как мы работаем
-      url: '#how'
+  searchForm:
+    classes: 'header__search'
 
-  - menuPages:
-    - title: Спецпредложение
-      url: '#offer'
-    - title: Оплата
-      url: '#pay'
-    - title: Контакты
-      url: '#contacts'
+  contacts:
+    schedule: 'Пн - Пт: 9:00 - 18:00'
+    phones:
+      - '8 (495) <strong>979 94 88</strong>'
+      - '8 (901) <strong>519 94 88</strong>'
+
+  actions:
+    - component:
+        name: 'button--secondary'
+        config:
+          label: Войти
+          classes: 'action action--login'
+          svgIcon:
+            id: user
+            classes: 'action__icon'
+    - component:
+        name: 'button--secondary'
+        config:
+          label: Корзина
+          classes: 'action action--shopping-cart'
+          svgIcon:
+            id: shopping-cart
+            classes: 'action__icon'

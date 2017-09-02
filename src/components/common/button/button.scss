@@ -19,10 +19,10 @@ $button-color--secondary: #000;
 
 .c-button {
   font-size: 1.4rem;
-  border-radius: 0.4rem;
+  border-radius: 0.6rem;
   padding: 1.3rem 1.8rem;
   line-height: 1;
-  font-weight: 400;
+  font-weight: 700;
   display: inline-flex;
   text-align: center;
   user-select: none;
@@ -32,6 +32,22 @@ $button-color--secondary: #000;
 
   @media print {
     display: none;
+  }
+
+  /**
+    Inner elements
+   */
+  // Custom component container
+  &__component{
+    margin-right: 1.3rem;
+  }
+  // svgIcon
+  &__svgIcon {
+    margin-right: 0.6rem;
+  }
+  // Label
+  &__label {
+
   }
 }
 

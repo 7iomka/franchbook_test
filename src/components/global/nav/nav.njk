@@ -1,0 +1,15 @@
+<nav class="nav {{ classes }}">
+  <ul class="nav__menu">
+    {% for item in items %}
+      <li class="nav__item">
+        <a href="{{ item.href }}" class="nav__anchor {{ 'nav__anchor--with-icon'
+        if item.icon }}">
+        {% if item.icon %}
+          {% render "@svg-use", item.icon, true %}
+        {% endif %}
+          <span class="nav__anchor-label">{{ item.label }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

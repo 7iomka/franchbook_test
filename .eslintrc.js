@@ -6,10 +6,13 @@ module.exports = {
   "plugins": ["import"],
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    // "commonjs": true,
+    "es6": true,
+    "jquery": true
   },
   "rules": {
-    "react/no-danger": "off",
+    // "react/no-danger": "off",
     "import/no-extraneous-dependencies": "off",
     "arrow-parens": "off",
     "global-require": "off",
@@ -21,8 +24,8 @@ module.exports = {
       "exports": "always-multiline",
       "functions": "ignore",
     }],
-    "linebreak-style": ["error", "windows"],
-
+    // "linebreak-style": ["error", "windows"],
+    // "linebreak-style": 0,
     "import/no-unresolved": [2, {
       commonjs: true,
       amd: true
@@ -31,6 +34,9 @@ module.exports = {
     "import/namespace": 2,
     "import/default": 2,
     "import/export": 2,
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }],
+
   },
 
   "settings": {
