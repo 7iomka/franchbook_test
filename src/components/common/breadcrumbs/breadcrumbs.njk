@@ -1,0 +1,24 @@
+<!-- breadcrumbs -->
+<ul class="breadcrumbs">
+  <li class="breadcrumbs__item breadcrumbs__item--home" itemscope itemtype="http://data-vocabulary
+  .org/Breadcrumb">
+    <a class="breadcrumbs__link" href="/" itemprop="url">
+      <span class="breadcrumbs__title">
+        {% render "@svg-use", homeIcon, true %}
+      </span>
+    </a>
+  </li>
+  {% for item in pages %}
+    <li class="breadcrumbs__item {{ 'breadcrumbs__item--first' if loop.first }}" itemscope
+        itemtype="http://data-vocabulary.org/Breadcrumb">
+      {% if item.link %}
+        <a class="breadcrumbs__link" href="{{ item.link }}" itemprop="url">
+          <span class="breadcrumbs__title" itemprop="title">{{ item.label }}</span>
+        </a>
+      {% else %}
+        <span class="breadcrumbs__page">{{ item.label }}</span>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+<!-- /breadcrumbs -->
