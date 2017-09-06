@@ -2,10 +2,8 @@ context:
   homeIcon:
     id: home
   pages:
-    - label: Каталог
+    - label: Страница
       link: '#'
-    - label: Бытовая химия
+    - label: Внутренняя страница
       link: '#'
-    - label: Чистящие средства
-      link: '#'
-    - label: Чистящее средство «Пемолюкс»
+    - label: Текущая страница

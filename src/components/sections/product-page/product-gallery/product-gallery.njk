@@ -1,0 +1,38 @@
+{# gallery loop #}
+{%- macro GalleryLoop(config) %}
+    {% for id in range (1, config.images+1) -%}
+          {% set type = 'image' %}
+          {% set URL_BASE = '/assets/images/products/' + config.productId + '/' %}
+          
+          {% set src = URL_BASE + config.productId + '_' + id + '.jpg' | path %}
+          {% set thumbSrc = URL_BASE + 'thumbs/' + config.productId + '_' + id + '.jpg' | path %}
+        {{ caller() }}
+    {% endfor %}
+{% endmacro -%}
+
+<div class="product-gallery">
+  <div class="c-media-container product-gallery__image-container">
+    {% call GalleryLoop(config) -%}
+    <div class="c-media-container__image-wrapper">
+      <img data-src="{{ src }}" alt="" class="c-media-container__image " data-type="{{ type }}" />
+    </div>
+    {%- endcall %}
+  </div>
+  
+  <div class="product-gallery__carousel">
+    <div class="c-carousel">
+      <div class="c-carousel__images c-carousel__images--padding">
+        {% call GalleryLoop(config) -%}
+        <a data-src="{{ src }}" data-type="{{ type }}"
+           class="c-carousel__item" >
+          <div class="c-carousel__item-wrapper">
+            <img data-src="{{ thumbSrc }}" class="c-carousel__img"
+                 data-original="{{ src }}" data-type="{{ image }}" />
+          </div>
+        </a>
+        {%- endcall %}
+      </div>
+    </div>
+  
+  </div>
+</div>

@@ -1,6 +1,15 @@
 {% extends "@page" %}
 {% block main %}
   {%- for section in sections -%}
+    {% render "@" + section %}
+  {%- endfor -%}
+{% endblock %}
+
+{# old #}
+{#
+{% extends "@page" %}
+{% block main %}
+  {%- for section in sections -%}
     {% if section.section %}
       {% render "@" + section.section, section.config %}
     {% else %}
@@ -8,3 +17,4 @@
     {% endif %}
   {%- endfor -%}
 {% endblock %}
+#}

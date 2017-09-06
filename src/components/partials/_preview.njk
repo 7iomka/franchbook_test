@@ -57,6 +57,22 @@
     <script type="text/javascript">
       var localProxy = '';
     </script>
+    
+    <script>
+      // Listen to the Initialized event
+      window.addEventListener('LazyLoad::Initialized', function (e) {
+        // Get the instance and puts it in the lazyLoadInstance variable
+        lazyLoadInstance = e.detail.instance;
+      }, false);
+  
+      // Set the lazyload options for async usage
+      lazyLoadOptions = {
+      };
+    </script>
+
+    <!-- Download the script and execute it after lazyLoadOptions is defined -->
+    <script async src="{{ '/assets/scripts/vendors/lazyload/lazyload.min.js' | path }}"></script>
+    
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous" defer></script>
     <script src="{{ '/assets/scripts/modernizr-custom.js' | path }}" charset="utf-8" defer></script>
 

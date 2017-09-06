@@ -1,0 +1,243 @@
+$bp: 'lg'; // breakpoint
+$thumb__count--vertical: 5; // visible vertical thumbs
+$thumb__count--horizontal: 3; // visible horizontal thumbs
+$thumb__width: 8rem;
+$thumb__height: 7.6rem;
+$thumb__offset: 1.4rem;
+
+// default variables (horizontal)
+$carousel-arrow__width: 3.2rem;
+$carousel-arrow__height: 7.7rem;
+
+$carousel-arrow-icon__width: 1rem;
+$carousel-arrow-icon__height: 2.8rem;
+
+// horizontal
+$carousel-arrow--horizontal__width: $carousel-arrow__width;
+$carousel-arrow--horizontal__height: $carousel-arrow__height;
+$carousel-arrow-icon--horizontal__width: $carousel-arrow-icon__width;
+$carousel-arrow-icon--horizontal__height: $carousel-arrow-icon__height;
+
+// vertical (reverse)
+$carousel-arrow--vertical__width: $carousel-arrow__height;
+$carousel-arrow--vertical__height: $carousel-arrow__width;
+$carousel-arrow-icon--vertical__width: $carousel-arrow-icon__height;
+$carousel-arrow-icon--vertical__height: $carousel-arrow-icon__width;
+
+
+
+
+.button-prev,
+.button-next {
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+  border-radius: 0.6rem;
+  background-color: #fff;
+
+  svg {
+    color: $color--secondary_darker;
+    margin: auto;
+  }
+  &:hover svg {
+    color: $color--primary;
+  }
+}
+
+.button-prev--top,
+.button-next--bottom {
+  width: $carousel-arrow--vertical__width;
+  height: $carousel-arrow--vertical__height;
+  svg {
+    width: $carousel-arrow-icon--vertical__width;
+    height: $carousel-arrow-icon--vertical__height;
+  }
+}
+
+// horizontal button arrows
+.button-prev--left,
+.button-next--right {
+  width: $carousel-arrow--horizontal__width;
+  height: $carousel-arrow--horizontal__height;
+  svg {
+    width: $carousel-arrow-icon--horizontal__width;
+    height: $carousel-arrow-icon--horizontal__height;
+  }
+}
+
+
+/**
+  Carousel (thumbs)
+ */
+.c-carousel {
+
+
+
+  &__arrow {
+    position: absolute;
+
+    @include media('<#{$bp}') {
+      top: 50%;
+      transform: translateY(-50%);
+
+      &--prev {
+        left: 0;
+      }
+
+      &--next {
+        right: 0;
+        left: auto;
+      }
+    }
+
+    @include media('>=#{$bp}') {
+      left: 50%;
+      transform: translateX(-50%);
+
+      &--prev {
+        top: 0;
+      }
+
+      &--next {
+        top: auto;
+        bottom: 0;
+      }
+    }
+
+
+  }
+
+
+  // This is the slick instance
+  &__images {
+    display: flex;
+    align-items: center;
+    max-height: 52.6rem;
+    visibility: hidden;
+    overflow: hidden;
+
+    @include media('<#{$bp}') {
+      width: $thumb__width * $thumb__count--horizontal + $carousel-arrow--horizontal__width * 2 + $thumb__offset * ($thumb__count--horizontal + 2);
+    }
+    @include media('>=#{$bp}') {
+      flex-direction: column;
+      align-items: flex-start;
+      width: $thumb__width + $thumb__offset * 2;
+      height: auto;
+    }
+
+    // show after it is initialized
+    &.slick-initialized {
+      visibility: visible;
+      max-height: none;
+      overflow: inherit;
+    }
+
+    &--padding {
+      padding: 0 ($carousel-arrow--horizontal__width + $thumb__offset);
+      // padding for top/bottom vertical arrows buttons
+      @include media('>=#{$bp}') {
+        padding: ($carousel-arrow--vertical__height + $thumb__offset) 0;
+      }
+    }
+  }
+
+
+
+
+  &__item {
+    & {
+      width: $thumb__width + $thumb__offset; // this need to make visible margins
+      height: $thumb__height;
+      border: none;
+    }
+    .slick-vertical & {
+      width: $thumb__width;
+      height: $thumb__height + $thumb__offset; // this need to make visible margins
+    }
+
+  }
+
+  &__item-wrapper {
+    display: flex;
+    width: $thumb__width;
+    height: $thumb__height;
+    max-width: 100%;
+    margin: auto;
+    padding: 1rem 1.3rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+    border-radius: 0.6rem;
+    background-color: #fff;
+
+    .slick-current & {
+      box-shadow: 0 0 0 2px $color--primary, 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  &__img {
+    max-width: 100%;
+    margin: auto;
+  }
+
+
+  .slick-list {
+    flex-grow: 1;
+
+    // offsets for shadow
+    padding: $thumb__offset 0;
+    @include media('>=#{$bp}') {
+      padding: 0 $thumb__offset;
+    }
+  }
+
+  .slick-slide {
+    cursor: pointer;
+    margin: auto;
+    //@include media('>=#{$bp}') {
+    //  // need to vertical mode!!
+    //  height: 9rem;
+    //}
+  }
+
+
+
+
+}
+
+/**
+  Media container (synced carousel with 1 image)
+ */
+
+.c-media-container {
+  width: 27.1rem;
+  height: 27.1rem;
+  visibility: hidden;
+  overflow: hidden;
+
+  &.slick-initialized {
+    visibility: visible;
+    max-height: none;
+    overflow: inherit;
+  }
+
+  &__image {
+    height: auto;
+    max-width: 100%;
+  }
+
+  &__image-wrapper {
+
+  }
+}
+
+
+
+/**
+  Product gallery (layout)
+ */
+
+.product-gallery {
+  display: flex;
+  @include media('<#{$bp}') {
+    flex-direction: column;
+  }
+
+}

@@ -25,7 +25,7 @@ import 'utils/jquery.actualHeight.js';
 
 
 // defer images util
-import deferImages from 'utils/defer-images.js';
+// import deferImages from 'utils/defer-images.js';
 
 
 // import siteGallery from './components/common/_site-gallery/site-gallery.js';
@@ -36,6 +36,8 @@ import deferImages from 'utils/defer-images.js';
 
 import './components/common/button/button.js';
 import hamburgerActions from 'components/common/hamburger/hamburger';
+
+import productGallery from 'components/sections/product-page/product-gallery/product-gallery/';
 // init modal-links && fancybox set-up
 import modalActions from './components/global/modal/modal.js';
 
@@ -83,7 +85,7 @@ domready(() => {
   });
   const publicApi = {
     viewportUnitsBuggyfill: vubInstance,
-    deferImages: deferImages.init(),
+    // deferImages: deferImages.init(),
     // headerMenu: headerMenu.init(),
     // scrollLinks: scrollLinks.init(),
     // gallery: gallery.init(),
@@ -92,6 +94,7 @@ domready(() => {
     modalActions: modalActions.init(),
     siteModals: siteModals.init(),
     hamburgerActions: hamburgerActions.init(),
+    productGallery: productGallery.init(),
     // offerActions: offerActions.init(),
   };
 
@@ -104,6 +107,7 @@ domready(() => {
     viewportUnitsBuggyfill.refresh();
   }, 250));
 });
+
 
 // var siteGalleryInit = siteGallery();
 

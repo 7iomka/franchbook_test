@@ -53,13 +53,15 @@
 // @import 'vendors/jquery.fancybox/jquery.fancybox.min';
 @import 'vendors/jquery.fancybox/jquery.fancybox.min';
 @import 'vendors/jquery.fancybox/jquery.fancybox.custom.scss';
+
 @import 'vendors/slick/slick.scss';
-@import 'vendors/slick/slick.custom-theme.scss';
+@import 'vendors/slick/slick-theme.scss';
 // @import 'https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/5.5.3/core/css/jquery.mmenu.all.css';
 
 
 // Components
 @import '../../components/macros/**/*.scss';
+@import '../../components/utils/**/*.scss';
 @import '../../components/common/**/*.scss';
 @import '../../components/global/**/*.scss';
 @import '../../components/partials/**/*.scss';

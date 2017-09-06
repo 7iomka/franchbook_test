@@ -1,0 +1,12 @@
+context:
+  config:
+    homeIcon:
+      id: home
+    pages:
+    - label: Каталог
+      link: '#'
+    - label: Бытовая химия
+      link: '#'
+    - label: Чистящие средства
+      link: '#'
+    - label: Чистящее средство «Пемолюкс»
