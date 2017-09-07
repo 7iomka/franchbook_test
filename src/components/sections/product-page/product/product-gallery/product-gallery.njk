@@ -10,6 +10,8 @@
     {% endfor %}
 {% endmacro -%}
 
+
+{% set productGallery %}
 <div class="product-gallery">
   <div class="c-media-container product-gallery__image-container">
     {% call GalleryLoop(config) -%}
@@ -33,6 +35,7 @@
         {%- endcall %}
       </div>
     </div>
-  
   </div>
 </div>
+{% endset %}
+

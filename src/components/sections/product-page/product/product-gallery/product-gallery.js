@@ -60,7 +60,7 @@ const initCarousel = function (params) {
     variableWidth: false,
     centerMode: true,
     centerPadding: false,
-    slidesToScroll: 1,
+    slidesToScroll: 3,
     focusOnSelect: true,
     slidesToShow: T.slidesToShow.desktop,
     ...T.arrowTemplates.vertical,

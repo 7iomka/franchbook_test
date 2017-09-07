@@ -115,7 +115,7 @@ $carousel-arrow-icon--vertical__height: $carousel-arrow-icon__width;
     overflow: hidden;
 
     @include media('<#{$bp}') {
-      width: $thumb__width * $thumb__count--horizontal + $carousel-arrow--horizontal__width * 2 + $thumb__offset * ($thumb__count--horizontal + 2);
+      max-width: $thumb__width * $thumb__count--horizontal + $carousel-arrow--horizontal__width * 2 + $thumb__offset * ($thumb__count--horizontal + 2);
     }
     @include media('>=#{$bp}') {
       flex-direction: column;
