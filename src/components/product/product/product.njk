@@ -1,6 +1,7 @@
 <div class="product">
   <div class="product__header"></div>
-  <div class="product__image">{% include "@product-gallery" %}</div>
-
+  <div class="product__image">
+    {%- render "@product-gallery", {}, true -%}
+  </div>
   <div class="product__footer"></div>
 </div>

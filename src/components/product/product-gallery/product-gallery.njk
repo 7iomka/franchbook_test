@@ -9,22 +9,18 @@
         {{ caller() }}
     {% endfor %}
 {% endmacro -%}
-
-
-{% set productGallery %}
 <div class="product-gallery">
   <div class="c-media-container product-gallery__image-container">
-    {% call GalleryLoop(config) -%}
+    {%- call GalleryLoop(config) -%}
     <div class="c-media-container__image-wrapper">
       <img data-src="{{ src }}" alt="" class="c-media-container__image " data-type="{{ type }}" />
     </div>
-    {%- endcall %}
+    {%- endcall -%}
   </div>
-  
   <div class="product-gallery__carousel">
     <div class="c-carousel">
       <div class="c-carousel__images c-carousel__images--padding">
-        {% call GalleryLoop(config) -%}
+        {%- call GalleryLoop(config) -%}
         <a data-src="{{ src }}" data-type="{{ type }}"
            class="c-carousel__item" >
           <div class="c-carousel__item-wrapper">
@@ -32,10 +28,8 @@
                  data-original="{{ src }}" data-type="{{ image }}" />
           </div>
         </a>
-        {%- endcall %}
+        {%- endcall -%}
       </div>
     </div>
   </div>
 </div>
-{% endset %}
-

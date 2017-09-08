@@ -18,6 +18,7 @@ const components = {
   partial: `${__dirname}/src/components/partials`,
   section: `${__dirname}/src/components/sections`,
   template: `${__dirname}/src/components/templates`,
+  product: `${__dirname}/src/components/product`,
 };
 
 const mandelbrotCustom = require('@frctl/mandelbrot')({
@@ -210,6 +211,9 @@ function createComponent(args, done) {
   if (args.options.template) {
     componentType = 'template';
   }
+  if (args.options.product) {
+    componentType = 'product';
+  }
 
   // instance
   const correspondedDir = `${components[componentType]}`;
@@ -272,6 +276,7 @@ fractal.cli.command('create <component>', createComponent, {
     ['-p, --partial', 'Create a parial'],
     ['-s, --section <page-dir>', 'Create a section'],
     ['-t, --template', 'Create a template'],
+    ['-pr, --product', 'Create a product component'],
   ],
 });
 

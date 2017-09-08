@@ -37,7 +37,7 @@ import 'utils/jquery.actualHeight.js';
 import './components/common/button/button.js';
 import hamburgerActions from 'components/common/hamburger/hamburger';
 
-import productGallery from 'components/sections/product-page/product-gallery/product-gallery/';
+import productGallery from 'components/product/product-gallery/product-gallery';
 // init modal-links && fancybox set-up
 import modalActions from './components/global/modal/modal.js';
 
