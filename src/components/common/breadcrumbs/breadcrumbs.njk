@@ -13,10 +13,10 @@
         itemtype="http://data-vocabulary.org/Breadcrumb">
       {% if item.link %}
         <a class="breadcrumbs__link" href="{{ item.link }}" itemprop="url">
-          <span class="breadcrumbs__title" itemprop="title">{{ item.label }}</span>
+          <span class="breadcrumbs__title" itemprop="title"> {{ item.label }}</span>
         </a>
       {% else %}
-        <span class="breadcrumbs__page">{{ item.label }}</span>
+          <span class="breadcrumbs__page"> {{ item.label }}</span>
       {% endif %}
     </li>
   {% endfor %}

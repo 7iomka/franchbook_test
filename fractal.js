@@ -9,7 +9,7 @@ const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'developm
 const paths = {
   build: `${__dirname}/www`,
   src: `${__dirname}/src`,
-  static: `${__dirname}/tmp`,
+  static: isDevelopment ? `${__dirname}/tmp` : `${__dirname}/www`,
 };
 
 const components = {

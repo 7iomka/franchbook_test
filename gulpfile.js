@@ -442,17 +442,6 @@ gulp.task('webpack', (cb) => {
       return; // emit('error', err) in webpack-stream
     }
 
-    console.log(stats.toString({
-      colors: true,
-      assets: false,
-      chunks: false,
-      hash: false,
-      version: false,
-    }));
-
-    // gulplog[stats.hasErrors() ? 'error' : 'info'](stats.toString({
-    //   colors: true
-    // }));
   }
 
   /** Webpack options **/

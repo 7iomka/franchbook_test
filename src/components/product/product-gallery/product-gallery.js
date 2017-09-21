@@ -1,12 +1,6 @@
 import 'vendors/slick';
 
 const initCarousel = function (params) {
-  let O;
-  let P;
-  let M;
-  let carouselBehavior;
-  let mediaCarouselBehavior;
-
   // Template settings
   const T = {
     class: 'c-carousel',
@@ -23,6 +17,13 @@ const initCarousel = function (params) {
       smallMobile: 3,
     },
   };
+
+  let slidesCount;
+  let carouselBehavior;
+  let mediaCarouselBehavior;
+
+  const $mediaContainer = $(`.${T.mediaContainer}`);
+  const $imageContainer = $(`.${T.imagesContainer}`);
 
   T.itemClass = T.itemClass || `${T.class}__item`;
   T.arrowClass = T.arrowClass || `${T.class}__arrow`;
@@ -48,12 +49,10 @@ const initCarousel = function (params) {
                     </button>`,
     },
   };
-  M = $(`.${T.mediaContainer}`);
-  O = $(`.${T.imagesContainer}`);
 
 
-  let carouselParams = {
-    asNavFor: M,
+  const carouselParams = {
+    asNavFor: $mediaContainer,
     vertical: true,
     touchMove: false,
     swipe: false,
@@ -91,8 +90,8 @@ const initCarousel = function (params) {
     }],
   };
 
-  let mediaCarouselParams = {
-    asNavFor: O,
+  const mediaCarouselParams = {
+    asNavFor: $imageContainer,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
@@ -104,9 +103,8 @@ const initCarousel = function (params) {
   $.extend(true, carouselParams, params || {});
 
 
-  const onInit = function(event, slick, direction) {
-    lazyLoadInstance.update();
-    console.log(event);
+  const onInit = function (event, slick, direction) {
+    window.lazyLoadInstance.update();
   };
 
   const onBreakPoint = (event, slick, breakpoint) => {
@@ -122,19 +120,20 @@ const initCarousel = function (params) {
   };
 
   return ((() => {
-    O.on('init', onInit);
-    O.on('breakpoint', onBreakPoint);
-    O.on('beforeChange', onBeforeChange);
-    O.on('afterChange', onAfterChange);
+    $imageContainer.on('init', onInit);
+    $imageContainer.on('breakpoint', onBreakPoint);
+    $imageContainer.on('beforeChange', onBeforeChange);
+    $imageContainer.on('afterChange', onAfterChange);
 
     // if num of slides < slideToShow (maximum on desktop)
-    P = O.find(`.${T.itemClass}`).length;
-    carouselParams.slidesToShow = (P >= T.slidesToShow.desktop ? T.slidesToShow.desktop : P);
+    slidesCount = $imageContainer.find(`.${T.itemClass}`).length;
+    carouselParams.slidesToShow = (slidesCount >= T.slidesToShow.desktop)
+      ? T.slidesToShow.desktop
+      : slidesCount;
     // call thumbs carousel
-    carouselBehavior = O.slick(carouselParams);
+    carouselBehavior = $imageContainer.slick(carouselParams);
     // call main image carousel synced
-    mediaCarouselBehavior = M.slick(mediaCarouselParams);
-
+    mediaCarouselBehavior = $mediaContainer.slick(mediaCarouselParams);
   })()),
   {
     carouselBehavior,
@@ -146,18 +145,5 @@ const initCarousel = function (params) {
 domready(() => {
   exports.init = function (params) {
     initCarousel(params);
-    // Calculate the heighest slide and set a top/bottom margin for other children.
-    // As variableHeight is not supported yet: https://github.com/kenwheeler/slick/issues/1803
-    // let maxHeight = -1;
-    // $('.slick-slide').each(function () {
-    //   if ($(this).height() > maxHeight) {
-    //     maxHeight = $(this).height();
-    //   }
-    // });
-    // $('.slick-slide').each(function () {
-    //   if ($(this).height() < maxHeight) {
-    //     $(this).css('margin', `${Math.ceil((maxHeight - $(this).height()) / 2)}px 0`);
-    //   }
-    // });
   };
 });

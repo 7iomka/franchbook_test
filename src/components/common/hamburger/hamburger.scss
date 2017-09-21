@@ -14,7 +14,6 @@
   $container-selector: '.hamburger-container',
   $container-expanded-selector: '.hamburger-container--active'
 ) {
-
   /**
     Calculations
    */
@@ -61,18 +60,14 @@
     &:after {
       top: ($lineHeight + $offset) * 2;
     }
-
   }
-
 
   /**
     Expanded (active) state
    */
   #{$container-expanded-selector} {
-
     .hamburger {
-
-      @if($effect == 'rotate'){
+      @if ($effect == 'rotate') {
         // rotation inverse effect
         transform: rotateY(-180deg);
       }
@@ -97,10 +92,7 @@
       }
     }
   }
-
-
 }
-
 
 /**
   Call hamburger
